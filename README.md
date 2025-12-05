@@ -38,6 +38,8 @@ Behavior:
 - Sends the request to OpenRouter using the configured model.
 - Highlights the returned JavaScript with `highlight.js` and converts selected function names into links to MDN.
 - Merges any `functionLinks` provided in the request body so you can append custom destinations to the MDN defaults.
+- The generated HTML only includes Highlight.js class names; include a Highlight.js stylesheet (for example, `github.css`) in
+  your consuming page so the code is styled when rendered.
 
 Response body:
 
