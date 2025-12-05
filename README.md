@@ -26,7 +26,10 @@ Request body:
 
 ```json
 {
-  "question": "How do I animate a div on click?"
+  "question": "How do I animate a div on click?",
+  "functionLinks": {
+    "myHelper": "https://example.com/docs/my-helper"
+  }
 }
 ```
 
@@ -34,12 +37,16 @@ Behavior:
 - Wraps the question with a system prompt that demands **only JavaScript code** (no Markdown).
 - Sends the request to OpenRouter using the configured model.
 - Highlights the returned JavaScript with `highlight.js` and converts selected function names into links to MDN.
+- Merges any `functionLinks` provided in the request body so you can append custom destinations to the MDN defaults.
 
 Response body:
 
 ```json
 {
-  "html": "<pre><code class=\"hljs language-javascript\">…</code></pre>"
+  "html": "<pre><code class=\"hljs language-javascript\">…</code></pre>",
+  "links": [
+    { "function": "console.log", "url": "https://developer.mozilla.org/en-US/docs/Web/API/console/log" }
+  ]
 }
 ```
 

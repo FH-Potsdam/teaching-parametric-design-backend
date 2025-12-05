@@ -24,15 +24,20 @@ const FUNCTION_LINKS: Record<string, string> = {
 
 app.post("/api/generate", async (req: Request, res: Response) => {
   const question: unknown = req.body?.question;
+  const additionalLinks = parseFunctionLinks(req.body?.functionLinks);
 
   if (typeof question !== "string" || !question.trim()) {
     return res.status(400).json({ error: "Question is required" });
   }
 
+  if (additionalLinks instanceof Error) {
+    return res.status(400).json({ error: additionalLinks.message });
+  }
+
   try {
     const code = await requestOpenRouterCode(question);
-    const html = enhanceCode(code);
-    return res.json({ html });
+    const { html, links } = enhanceCode(code, additionalLinks);
+    return res.json({ html, links });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(error);
@@ -76,9 +81,12 @@ async function requestOpenRouterCode(question: string): Promise<string> {
   return content.trim();
 }
 
-function enhanceCode(code: string): string {
+function enhanceCode(
+  code: string,
+  additionalLinks: Record<string, string> = {}
+): { html: string; links: Array<{ function: string; url: string }> } {
   const highlighted = highlightJavaScript(code);
-  return linkifyFunctions(highlighted, FUNCTION_LINKS);
+  return linkifyFunctions(highlighted, { ...FUNCTION_LINKS, ...additionalLinks });
 }
 
 function highlightJavaScript(code: string): string {
@@ -86,12 +94,47 @@ function highlightJavaScript(code: string): string {
   return `<pre><code class="hljs language-javascript">${value}</code></pre>`;
 }
 
-function linkifyFunctions(html: string, functionLinks: Record<string, string>): string {
-  return Object.entries(functionLinks).reduce((output, [fn, url]) => {
-    const escaped = fn.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+function linkifyFunctions(
+  html: string,
+  functionLinks: Record<string, string>
+): { html: string; links: Array<{ function: string; url: string }> } {
+  const appliedLinks: Array<{ function: string; url: string }> = [];
+
+  const linkedHtml = Object.entries(functionLinks).reduce((output, [fn, url]) => {
+    const escaped = fn.replace(/[-/\^$*+?.()|[\]{}]/g, "\$&");
     const regex = new RegExp(`(\b${escaped}\b)`, "g");
-    return output.replace(regex, `<a href="${url}" target="_blank" rel="noopener noreferrer">$1</a>`);
+    let used = false;
+
+    const replaced = output.replace(regex, (_match, reference) => {
+      used = true;
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer">${reference}</a>`;
+    });
+
+    if (used) {
+      appliedLinks.push({ function: fn, url });
+    }
+
+    return replaced;
   }, html);
+
+  return { html: linkedHtml, links: appliedLinks };
+}
+
+function parseFunctionLinks(input: unknown): Record<string, string> | Error {
+  if (input === undefined) {
+    return {};
+  }
+
+  if (input === null || typeof input !== "object" || Array.isArray(input)) {
+    return new Error("functionLinks must be an object mapping function names to URLs");
+  }
+
+  return Object.entries(input as Record<string, unknown>).reduce<Record<string, string>>((links, [fn, url]) => {
+    if (typeof url === "string" && url.trim()) {
+      links[fn] = url.trim();
+    }
+    return links;
+  }, {});
 }
 
 if (process.env.NODE_ENV !== "test") {
@@ -101,5 +144,5 @@ if (process.env.NODE_ENV !== "test") {
   });
 }
 
-export { enhanceCode, highlightJavaScript, linkifyFunctions, FUNCTION_LINKS };
+export { enhanceCode, highlightJavaScript, linkifyFunctions, FUNCTION_LINKS, parseFunctionLinks };
 export default app;
