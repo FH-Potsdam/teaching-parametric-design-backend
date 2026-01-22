@@ -1,29 +1,27 @@
+import "dotenv/config";
 import express, { Request, Response } from "express";
-import hljs from "highlight.js";
+import path from "path";
+
+import { enhanceCode } from "./enhanceCode";
+import { loadFunctionLinks, resolveLanguage } from "./functionLinks";
+import { requestOpenRouterCode } from "./openRouter";
 
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(process.cwd(), "public")));
+app.use("/docs", express.static(path.join(process.cwd(), "docs-api")));
 
 const PORT = process.env.PORT || 3000;
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "openai/gpt-4o-mini";
 
-if (!OPENROUTER_API_KEY) {
-  // eslint-disable-next-line no-console
-  console.warn("OPENROUTER_API_KEY is not set. Requests to OpenRouter will fail.");
-}
-
-const BASE_CONTEXT = `You are a JavaScript coding assistant. Always respond with ONLY plain JavaScript code that can run in a modern browser. Never include Markdown, explanations, prose, or additional commentary—just the code itself. The code must be safe to embed inside an HTML <script> tag.`;
-
-const FUNCTION_LINKS: Record<string, string> = {
-  fetch: "https://developer.mozilla.org/en-US/docs/Web/API/fetch",
-  "console.log": "https://developer.mozilla.org/en-US/docs/Web/API/console/log",
-  "document.querySelector": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector",
-  "addEventListener": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
-};
-
-app.post("/api/generate", async (req: Request, res: Response) => {
+/**
+ * Handle code-generation requests and return highlighted HTML plus link data.
+ * @param req - Express request with question/language payload.
+ * @param res - Express response used to send JSON.
+ * @returns Promise resolving to an Express response.
+ */
+async function handleGenerate(req: Request, res: Response) {
   const question: unknown = req.body?.question;
+  const language = resolveLanguage(req.body?.language);
 
   if (typeof question !== "string" || !question.trim()) {
     return res.status(400).json({ error: "Question is required" });
@@ -31,68 +29,18 @@ app.post("/api/generate", async (req: Request, res: Response) => {
 
   try {
     const code = await requestOpenRouterCode(question);
-    const html = enhanceCode(code);
-    return res.json({ html });
+    const functionLinks = loadFunctionLinks(language);
+    const html = enhanceCode(code, functionLinks, language);
+    return res.json({ html: html.code, raw: code, functionCalls: html.functions });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(error);
     return res.status(500).json({ error: "Failed to generate code" });
   }
-});
-
-async function requestOpenRouterCode(question: string): Promise<string> {
-  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${OPENROUTER_API_KEY ?? ""}`,
-      "HTTP-Referer": process.env.OPENROUTER_SITE_URL || "http://localhost",
-      "X-Title": process.env.OPENROUTER_APP_TITLE || "Teaching Parametric Design Backend"
-    },
-    body: JSON.stringify({
-      model: OPENROUTER_MODEL,
-      temperature: 0.2,
-      messages: [
-        { role: "system", content: BASE_CONTEXT },
-        { role: "user", content: question }
-      ]
-    })
-  });
-
-  if (!response.ok) {
-    const details = await response.text();
-    throw new Error(`OpenRouter request failed: ${response.status} ${response.statusText} - ${details}`);
-  }
-
-  const payload = (await response.json()) as {
-    choices?: Array<{ message?: { content?: string } }>;
-  };
-
-  const content = payload.choices?.[0]?.message?.content;
-  if (!content) {
-    throw new Error("No content returned from OpenRouter");
-  }
-
-  return content.trim();
 }
 
-function enhanceCode(code: string): string {
-  const highlighted = highlightJavaScript(code);
-  return linkifyFunctions(highlighted, FUNCTION_LINKS);
-}
-
-function highlightJavaScript(code: string): string {
-  const { value } = hljs.highlight(code, { language: "javascript" });
-  return `<pre><code class="hljs language-javascript">${value}</code></pre>`;
-}
-
-function linkifyFunctions(html: string, functionLinks: Record<string, string>): string {
-  return Object.entries(functionLinks).reduce((output, [fn, url]) => {
-    const escaped = fn.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
-    const regex = new RegExp(`(\b${escaped}\b)`, "g");
-    return output.replace(regex, `<a href="${url}" target="_blank" rel="noopener noreferrer">$1</a>`);
-  }, html);
-}
+app.post("/api/generate", handleGenerate);
+app.get("/api/ping", (_req: Request, res: Response) => res.type("text").send("pong"));
 
 if (process.env.NODE_ENV !== "test") {
   app.listen(PORT, () => {
@@ -101,5 +49,5 @@ if (process.env.NODE_ENV !== "test") {
   });
 }
 
-export { enhanceCode, highlightJavaScript, linkifyFunctions, FUNCTION_LINKS };
+export { handleGenerate };
 export default app;

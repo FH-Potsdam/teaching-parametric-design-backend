@@ -39,9 +39,25 @@ Response body:
 
 ```json
 {
-  "html": "<pre><code class=\"hljs language-javascript\">…</code></pre>"
+  "html": "<pre><code class=\"hljs language-javascript\">…</code></pre>",
+  "raw": "const sketch = ...",
+  "functionCalls": ["createCanvas", "background", "console.log"]
 }
 ```
+
+## OpenAPI
+
+See the OpenAPI 3.0 specification in `openapi.yaml`.
+
+## Swagger UI
+
+Build the static Swagger UI bundle into `docs-api/`:
+
+```bash
+npm run docs:api
+```
+
+When the server is running, visit `http://localhost:3000/docs/` to view the docs.
 
 ## Environment Variables
 

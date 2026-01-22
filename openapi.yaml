@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: Teaching Parametric Design Backend API
+  version: 0.1.0
+  description: API for forwarding code generation requests to OpenRouter and returning HTML-highlighted JavaScript snippets.
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/generate:
+    post:
+      summary: Generate highlighted JavaScript and link metadata
+      description: Returns highlighted HTML, raw model output, and extracted function link metadata.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GenerateRequest"
+            examples:
+              default:
+                value:
+                  question: Draw a random grid of circles.
+                  language: en
+      responses:
+        "200":
+          description: Highlighted HTML and metadata.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GenerateResponse"
+        "400":
+          description: Missing or invalid request payload.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                missingQuestion:
+                  value:
+                    error: Question is required
+        "500":
+          description: Failed to generate code.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                generationFailed:
+                  value:
+                    error: Failed to generate code
+  /api/ping:
+    get:
+      summary: Health check endpoint
+      responses:
+        "200":
+          description: Pong response.
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                pong:
+                  value: pong
+components:
+  schemas:
+    GenerateRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - question
+      properties:
+        question:
+          type: string
+          description: Prompt describing the JavaScript code to generate.
+        language:
+          type: string
+          description: Language code used to resolve documentation links.
+          enum:
+            - en
+            - de
+          default: en
+    GenerateResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - html
+        - raw
+        - functionCalls
+      properties:
+        html:
+          type: string
+          description: Syntax-highlighted HTML for the generated JavaScript.
+        raw:
+          type: string
+          description: Raw JavaScript source returned by the model.
+        functionCalls:
+          type: array
+          description: Linked function metadata extracted from the HTML.
+          items:
+            $ref: "#/components/schemas/FunctionCall"
+    FunctionCall:
+      type: object
+      additionalProperties: false
+      required:
+        - name
+        - url
+      properties:
+        name:
+          type: string
+        url:
+          type: string
+          format: uri
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - error
+      properties:
+        error:
+          type: string

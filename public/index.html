@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parametric Design - Test UI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <p class="kicker">Test UI</p>
+        <h1>Parametric Design Generator</h1>
+        <p class="subhead">Send a prompt to the backend and preview the highlighted JavaScript response.</p>
+      </header>
+
+      <section class="panel">
+        <form id="promptForm" class="form">
+          <label for="question" class="label">Prompt</label>
+          <textarea
+            id="question"
+            name="question"
+            rows="6"
+            placeholder="Describe the JavaScript you want..."
+            required
+          ></textarea>
+          <div class="field">
+            <label for="language" class="label">Language</label>
+            <select id="language" name="language">
+              <option value="en">English (en)</option>
+              <option value="de">Deutsch (de)</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button type="submit" id="submitBtn">Generate</button>
+            <span class="status" id="status">Idle</span>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="output-header">
+          <h2>Output</h2>
+          <button class="ghost" id="clearBtn" type="button">Clear</button>
+        </div>
+        <div class="output-grid">
+          <div class="output-block">
+            <h3>Highlighted</h3>
+            <div id="output" class="output">
+              <p class="empty">No response yet.</p>
+            </div>
+          </div>
+          <div class="output-block">
+            <h3>Functions</h3>
+            <ul id="functionList" class="function-list">
+              <li class="empty">No functions yet.</li>
+            </ul>
+          </div>
+          <div class="output-block">
+            <div class="output-title">
+              <h3>Raw code</h3>
+              <button class="ghost" id="copyBtn" type="button">Copy</button>
+            </div>
+            <pre id="rawOutput" class="raw-output">No code yet.</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

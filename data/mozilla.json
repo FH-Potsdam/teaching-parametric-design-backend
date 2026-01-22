@@ -1,0 +1,2017 @@
+[
+  {
+    "name": "eval",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/eval"
+  },
+  {
+    "name": "isFinite",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/isFinite"
+  },
+  {
+    "name": "isNaN",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/isNaN"
+  },
+  {
+    "name": "parseFloat",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/parseFloat"
+  },
+  {
+    "name": "parseInt",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/parseInt"
+  },
+  {
+    "name": "decodeURI",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/decodeURI"
+  },
+  {
+    "name": "decodeURIComponent",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/decodeURIComponent"
+  },
+  {
+    "name": "encodeURI",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/encodeURI"
+  },
+  {
+    "name": "encodeURIComponent",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/encodeURIComponent"
+  },
+  {
+    "name": "escape",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/escape"
+  },
+  {
+    "name": "unescape",
+    "root": true,
+    "url": "JavaScript/Reference/Global_Objects/unescape"
+  },
+  {
+    "name": "assign",
+    "url": "JavaScript/Reference/Global_Objects/Object/assign"
+  },
+  {
+    "name": "create",
+    "url": "JavaScript/Reference/Global_Objects/Object/create"
+  },
+  {
+    "name": "defineProperties",
+    "url": "JavaScript/Reference/Global_Objects/Object/defineProperties"
+  },
+  {
+    "name": "defineProperty",
+    "url": "JavaScript/Reference/Global_Objects/Object/defineProperty"
+  },
+  {
+    "name": "entries",
+    "url": "JavaScript/Reference/Global_Objects/Object/entries"
+  },
+  {
+    "name": "freeze",
+    "url": "JavaScript/Reference/Global_Objects/Object/freeze"
+  },
+  {
+    "name": "fromEntries",
+    "url": "JavaScript/Reference/Global_Objects/Object/fromEntries"
+  },
+  {
+    "name": "getOwnPropertyDescriptor",
+    "url": "JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor"
+  },
+  {
+    "name": "getOwnPropertyDescriptors",
+    "url": "JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors"
+  },
+  {
+    "name": "getOwnPropertyNames",
+    "url": "JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames"
+  },
+  {
+    "name": "getOwnPropertySymbols",
+    "url": "JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols"
+  },
+  {
+    "name": "getPrototypeOf",
+    "url": "JavaScript/Reference/Global_Objects/Object/getPrototypeOf"
+  },
+  {
+    "name": "groupBy",
+    "url": "JavaScript/Reference/Global_Objects/Object/groupBy"
+  },
+  {
+    "name": "hasOwn",
+    "url": "JavaScript/Reference/Global_Objects/Object/hasOwn"
+  },
+  {
+    "name": "is",
+    "url": "JavaScript/Reference/Global_Objects/Object/is"
+  },
+  {
+    "name": "isExtensible",
+    "url": "JavaScript/Reference/Global_Objects/Object/isExtensible"
+  },
+  {
+    "name": "isFrozen",
+    "url": "JavaScript/Reference/Global_Objects/Object/isFrozen"
+  },
+  {
+    "name": "isSealed",
+    "url": "JavaScript/Reference/Global_Objects/Object/isSealed"
+  },
+  {
+    "name": "keys",
+    "url": "JavaScript/Reference/Global_Objects/Object/keys"
+  },
+  {
+    "name": "preventExtensions",
+    "url": "JavaScript/Reference/Global_Objects/Object/preventExtensions"
+  },
+  {
+    "name": "seal",
+    "url": "JavaScript/Reference/Global_Objects/Object/seal"
+  },
+  {
+    "name": "setPrototypeOf",
+    "url": "JavaScript/Reference/Global_Objects/Object/setPrototypeOf"
+  },
+  {
+    "name": "values",
+    "url": "JavaScript/Reference/Global_Objects/Object/values"
+  },
+  {
+    "name": "hasOwnProperty",
+    "url": "JavaScript/Reference/Global_Objects/Object/hasOwnProperty"
+  },
+  {
+    "name": "isPrototypeOf",
+    "url": "JavaScript/Reference/Global_Objects/Object/isPrototypeOf"
+  },
+  {
+    "name": "propertyIsEnumerable",
+    "url": "JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable"
+  },
+  {
+    "name": "toLocaleString",
+    "url": "JavaScript/Reference/Global_Objects/Object/toLocaleString"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/Object/toString"
+  },
+  {
+    "name": "valueOf",
+    "url": "JavaScript/Reference/Global_Objects/Object/valueOf"
+  },
+  {
+    "name": "apply",
+    "url": "JavaScript/Reference/Global_Objects/Function/apply"
+  },
+  {
+    "name": "bind",
+    "url": "JavaScript/Reference/Global_Objects/Function/bind"
+  },
+  {
+    "name": "call",
+    "url": "JavaScript/Reference/Global_Objects/Function/call"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/Function/toString"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/Boolean/toString"
+  },
+  {
+    "name": "valueOf",
+    "url": "JavaScript/Reference/Global_Objects/Boolean/valueOf"
+  },
+  {
+    "name": "for",
+    "url": "JavaScript/Reference/Global_Objects/Symbol/for"
+  },
+  {
+    "name": "keyFor",
+    "url": "JavaScript/Reference/Global_Objects/Symbol/keyFor"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/Symbol/toString"
+  },
+  {
+    "name": "valueOf",
+    "url": "JavaScript/Reference/Global_Objects/Symbol/valueOf"
+  },
+  {
+    "name": "isFinite",
+    "url": "JavaScript/Reference/Global_Objects/Number/isFinite"
+  },
+  {
+    "name": "isInteger",
+    "url": "JavaScript/Reference/Global_Objects/Number/isInteger"
+  },
+  {
+    "name": "isNaN",
+    "url": "JavaScript/Reference/Global_Objects/Number/isNaN"
+  },
+  {
+    "name": "isSafeInteger",
+    "url": "JavaScript/Reference/Global_Objects/Number/isSafeInteger"
+  },
+  {
+    "name": "parseFloat",
+    "url": "JavaScript/Reference/Global_Objects/Number/parseFloat"
+  },
+  {
+    "name": "parseInt",
+    "url": "JavaScript/Reference/Global_Objects/Number/parseInt"
+  },
+  {
+    "name": "toExponential",
+    "url": "JavaScript/Reference/Global_Objects/Number/toExponential"
+  },
+  {
+    "name": "toFixed",
+    "url": "JavaScript/Reference/Global_Objects/Number/toFixed"
+  },
+  {
+    "name": "toPrecision",
+    "url": "JavaScript/Reference/Global_Objects/Number/toPrecision"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/Number/toString"
+  },
+  {
+    "name": "valueOf",
+    "url": "JavaScript/Reference/Global_Objects/Number/valueOf"
+  },
+  {
+    "name": "toLocaleString",
+    "url": "JavaScript/Reference/Global_Objects/Number/toLocaleString"
+  },
+  {
+    "name": "asIntN",
+    "url": "JavaScript/Reference/Global_Objects/BigInt/asIntN"
+  },
+  {
+    "name": "asUintN",
+    "url": "JavaScript/Reference/Global_Objects/BigInt/asUintN"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/BigInt/toString"
+  },
+  {
+    "name": "valueOf",
+    "url": "JavaScript/Reference/Global_Objects/BigInt/valueOf"
+  },
+  {
+    "name": "abs",
+    "url": "JavaScript/Reference/Global_Objects/Math/abs"
+  },
+  {
+    "name": "acos",
+    "url": "JavaScript/Reference/Global_Objects/Math/acos"
+  },
+  {
+    "name": "acosh",
+    "url": "JavaScript/Reference/Global_Objects/Math/acosh"
+  },
+  {
+    "name": "asin",
+    "url": "JavaScript/Reference/Global_Objects/Math/asin"
+  },
+  {
+    "name": "asinh",
+    "url": "JavaScript/Reference/Global_Objects/Math/asinh"
+  },
+  {
+    "name": "atan",
+    "url": "JavaScript/Reference/Global_Objects/Math/atan"
+  },
+  {
+    "name": "atan2",
+    "url": "JavaScript/Reference/Global_Objects/Math/atan2"
+  },
+  {
+    "name": "atanh",
+    "url": "JavaScript/Reference/Global_Objects/Math/atanh"
+  },
+  {
+    "name": "cbrt",
+    "url": "JavaScript/Reference/Global_Objects/Math/cbrt"
+  },
+  {
+    "name": "ceil",
+    "url": "JavaScript/Reference/Global_Objects/Math/ceil"
+  },
+  {
+    "name": "clz32",
+    "url": "JavaScript/Reference/Global_Objects/Math/clz32"
+  },
+  {
+    "name": "cos",
+    "url": "JavaScript/Reference/Global_Objects/Math/cos"
+  },
+  {
+    "name": "cosh",
+    "url": "JavaScript/Reference/Global_Objects/Math/cosh"
+  },
+  {
+    "name": "exp",
+    "url": "JavaScript/Reference/Global_Objects/Math/exp"
+  },
+  {
+    "name": "expm1",
+    "url": "JavaScript/Reference/Global_Objects/Math/expm1"
+  },
+  {
+    "name": "floor",
+    "url": "JavaScript/Reference/Global_Objects/Math/floor"
+  },
+  {
+    "name": "f16round",
+    "url": "JavaScript/Reference/Global_Objects/Math/f16round"
+  },
+  {
+    "name": "fround",
+    "url": "JavaScript/Reference/Global_Objects/Math/fround"
+  },
+  {
+    "name": "hypot",
+    "url": "JavaScript/Reference/Global_Objects/Math/hypot"
+  },
+  {
+    "name": "imul",
+    "url": "JavaScript/Reference/Global_Objects/Math/imul"
+  },
+  {
+    "name": "log",
+    "url": "JavaScript/Reference/Global_Objects/Math/log"
+  },
+  {
+    "name": "log10",
+    "url": "JavaScript/Reference/Global_Objects/Math/log10"
+  },
+  {
+    "name": "log1p",
+    "url": "JavaScript/Reference/Global_Objects/Math/log1p"
+  },
+  {
+    "name": "log2",
+    "url": "JavaScript/Reference/Global_Objects/Math/log2"
+  },
+  {
+    "name": "max",
+    "url": "JavaScript/Reference/Global_Objects/Math/max"
+  },
+  {
+    "name": "min",
+    "url": "JavaScript/Reference/Global_Objects/Math/min"
+  },
+  {
+    "name": "pow",
+    "url": "JavaScript/Reference/Global_Objects/Math/pow"
+  },
+  {
+    "name": "random",
+    "url": "JavaScript/Reference/Global_Objects/Math/random"
+  },
+  {
+    "name": "round",
+    "url": "JavaScript/Reference/Global_Objects/Math/round"
+  },
+  {
+    "name": "sign",
+    "url": "JavaScript/Reference/Global_Objects/Math/sign"
+  },
+  {
+    "name": "sin",
+    "url": "JavaScript/Reference/Global_Objects/Math/sin"
+  },
+  {
+    "name": "sinh",
+    "url": "JavaScript/Reference/Global_Objects/Math/sinh"
+  },
+  {
+    "name": "sqrt",
+    "url": "JavaScript/Reference/Global_Objects/Math/sqrt"
+  },
+  {
+    "name": "sumPrecise",
+    "url": "JavaScript/Reference/Global_Objects/Math/sumPrecise"
+  },
+  {
+    "name": "tan",
+    "url": "JavaScript/Reference/Global_Objects/Math/tan"
+  },
+  {
+    "name": "tanh",
+    "url": "JavaScript/Reference/Global_Objects/Math/tanh"
+  },
+  {
+    "name": "trunc",
+    "url": "JavaScript/Reference/Global_Objects/Math/trunc"
+  },
+  {
+    "name": "now",
+    "url": "JavaScript/Reference/Global_Objects/Date/now"
+  },
+  {
+    "name": "parse",
+    "url": "JavaScript/Reference/Global_Objects/Date/parse"
+  },
+  {
+    "name": "UTC",
+    "url": "JavaScript/Reference/Global_Objects/Date/UTC"
+  },
+  {
+    "name": "getDate",
+    "url": "JavaScript/Reference/Global_Objects/Date/getDate"
+  },
+  {
+    "name": "getDay",
+    "url": "JavaScript/Reference/Global_Objects/Date/getDay"
+  },
+  {
+    "name": "getFullYear",
+    "url": "JavaScript/Reference/Global_Objects/Date/getFullYear"
+  },
+  {
+    "name": "getHours",
+    "url": "JavaScript/Reference/Global_Objects/Date/getHours"
+  },
+  {
+    "name": "getMilliseconds",
+    "url": "JavaScript/Reference/Global_Objects/Date/getMilliseconds"
+  },
+  {
+    "name": "getMinutes",
+    "url": "JavaScript/Reference/Global_Objects/Date/getMinutes"
+  },
+  {
+    "name": "getMonth",
+    "url": "JavaScript/Reference/Global_Objects/Date/getMonth"
+  },
+  {
+    "name": "getSeconds",
+    "url": "JavaScript/Reference/Global_Objects/Date/getSeconds"
+  },
+  {
+    "name": "getTime",
+    "url": "JavaScript/Reference/Global_Objects/Date/getTime"
+  },
+  {
+    "name": "getTimezoneOffset",
+    "url": "JavaScript/Reference/Global_Objects/Date/getTimezoneOffset"
+  },
+  {
+    "name": "getUTCDate",
+    "url": "JavaScript/Reference/Global_Objects/Date/getUTCDate"
+  },
+  {
+    "name": "getUTCDay",
+    "url": "JavaScript/Reference/Global_Objects/Date/getUTCDay"
+  },
+  {
+    "name": "getUTCFullYear",
+    "url": "JavaScript/Reference/Global_Objects/Date/getUTCFullYear"
+  },
+  {
+    "name": "getUTCHours",
+    "url": "JavaScript/Reference/Global_Objects/Date/getUTCHours"
+  },
+  {
+    "name": "getUTCMilliseconds",
+    "url": "JavaScript/Reference/Global_Objects/Date/getUTCMilliseconds"
+  },
+  {
+    "name": "getUTCMinutes",
+    "url": "JavaScript/Reference/Global_Objects/Date/getUTCMinutes"
+  },
+  {
+    "name": "getUTCMonth",
+    "url": "JavaScript/Reference/Global_Objects/Date/getUTCMonth"
+  },
+  {
+    "name": "getUTCSeconds",
+    "url": "JavaScript/Reference/Global_Objects/Date/getUTCSeconds"
+  },
+  {
+    "name": "setDate",
+    "url": "JavaScript/Reference/Global_Objects/Date/setDate"
+  },
+  {
+    "name": "setFullYear",
+    "url": "JavaScript/Reference/Global_Objects/Date/setFullYear"
+  },
+  {
+    "name": "setHours",
+    "url": "JavaScript/Reference/Global_Objects/Date/setHours"
+  },
+  {
+    "name": "setMilliseconds",
+    "url": "JavaScript/Reference/Global_Objects/Date/setMilliseconds"
+  },
+  {
+    "name": "setMinutes",
+    "url": "JavaScript/Reference/Global_Objects/Date/setMinutes"
+  },
+  {
+    "name": "setMonth",
+    "url": "JavaScript/Reference/Global_Objects/Date/setMonth"
+  },
+  {
+    "name": "setSeconds",
+    "url": "JavaScript/Reference/Global_Objects/Date/setSeconds"
+  },
+  {
+    "name": "setTime",
+    "url": "JavaScript/Reference/Global_Objects/Date/setTime"
+  },
+  {
+    "name": "setUTCDate",
+    "url": "JavaScript/Reference/Global_Objects/Date/setUTCDate"
+  },
+  {
+    "name": "setUTCFullYear",
+    "url": "JavaScript/Reference/Global_Objects/Date/setUTCFullYear"
+  },
+  {
+    "name": "setUTCHours",
+    "url": "JavaScript/Reference/Global_Objects/Date/setUTCHours"
+  },
+  {
+    "name": "setUTCMilliseconds",
+    "url": "JavaScript/Reference/Global_Objects/Date/setUTCMilliseconds"
+  },
+  {
+    "name": "setUTCMinutes",
+    "url": "JavaScript/Reference/Global_Objects/Date/setUTCMinutes"
+  },
+  {
+    "name": "setUTCMonth",
+    "url": "JavaScript/Reference/Global_Objects/Date/setUTCMonth"
+  },
+  {
+    "name": "setUTCSeconds",
+    "url": "JavaScript/Reference/Global_Objects/Date/setUTCSeconds"
+  },
+  {
+    "name": "toDateString",
+    "url": "JavaScript/Reference/Global_Objects/Date/toDateString"
+  },
+  {
+    "name": "toISOString",
+    "url": "JavaScript/Reference/Global_Objects/Date/toISOString"
+  },
+  {
+    "name": "toJSON",
+    "url": "JavaScript/Reference/Global_Objects/Date/toJSON"
+  },
+  {
+    "name": "toLocaleDateString",
+    "url": "JavaScript/Reference/Global_Objects/Date/toLocaleDateString"
+  },
+  {
+    "name": "toLocaleString",
+    "url": "JavaScript/Reference/Global_Objects/Date/toLocaleString"
+  },
+  {
+    "name": "toLocaleTimeString",
+    "url": "JavaScript/Reference/Global_Objects/Date/toLocaleTimeString"
+  },
+  {
+    "name": "toTimeString",
+    "url": "JavaScript/Reference/Global_Objects/Date/toTimeString"
+  },
+  {
+    "name": "toUTCString",
+    "url": "JavaScript/Reference/Global_Objects/Date/toUTCString"
+  },
+  {
+    "name": "valueOf",
+    "url": "JavaScript/Reference/Global_Objects/Date/valueOf"
+  },
+  {
+    "name": "fromCharCode",
+    "url": "JavaScript/Reference/Global_Objects/String/fromCharCode"
+  },
+  {
+    "name": "fromCodePoint",
+    "url": "JavaScript/Reference/Global_Objects/String/fromCodePoint"
+  },
+  {
+    "name": "raw",
+    "url": "JavaScript/Reference/Global_Objects/String/raw"
+  },
+  {
+    "name": "charAt",
+    "url": "JavaScript/Reference/Global_Objects/String/charAt"
+  },
+  {
+    "name": "charCodeAt",
+    "url": "JavaScript/Reference/Global_Objects/String/charCodeAt"
+  },
+  {
+    "name": "codePointAt",
+    "url": "JavaScript/Reference/Global_Objects/String/codePointAt"
+  },
+  {
+    "name": "concat",
+    "url": "JavaScript/Reference/Global_Objects/String/concat"
+  },
+  {
+    "name": "endsWith",
+    "url": "JavaScript/Reference/Global_Objects/String/endsWith"
+  },
+  {
+    "name": "includes",
+    "url": "JavaScript/Reference/Global_Objects/String/includes"
+  },
+  {
+    "name": "indexOf",
+    "url": "JavaScript/Reference/Global_Objects/String/indexOf"
+  },
+  {
+    "name": "lastIndexOf",
+    "url": "JavaScript/Reference/Global_Objects/String/lastIndexOf"
+  },
+  {
+    "name": "localeCompare",
+    "url": "JavaScript/Reference/Global_Objects/String/localeCompare"
+  },
+  {
+    "name": "match",
+    "url": "JavaScript/Reference/Global_Objects/String/match"
+  },
+  {
+    "name": "matchAll",
+    "url": "JavaScript/Reference/Global_Objects/String/matchAll"
+  },
+  {
+    "name": "normalize",
+    "url": "JavaScript/Reference/Global_Objects/String/normalize"
+  },
+  {
+    "name": "padEnd",
+    "url": "JavaScript/Reference/Global_Objects/String/padEnd"
+  },
+  {
+    "name": "padStart",
+    "url": "JavaScript/Reference/Global_Objects/String/padStart"
+  },
+  {
+    "name": "repeat",
+    "url": "JavaScript/Reference/Global_Objects/String/repeat"
+  },
+  {
+    "name": "replace",
+    "url": "JavaScript/Reference/Global_Objects/String/replace"
+  },
+  {
+    "name": "replaceAll",
+    "url": "JavaScript/Reference/Global_Objects/String/replaceAll"
+  },
+  {
+    "name": "search",
+    "url": "JavaScript/Reference/Global_Objects/String/search"
+  },
+  {
+    "name": "slice",
+    "url": "JavaScript/Reference/Global_Objects/String/slice"
+  },
+  {
+    "name": "split",
+    "url": "JavaScript/Reference/Global_Objects/String/split"
+  },
+  {
+    "name": "startsWith",
+    "url": "JavaScript/Reference/Global_Objects/String/startsWith"
+  },
+  {
+    "name": "substring",
+    "url": "JavaScript/Reference/Global_Objects/String/substring"
+  },
+  {
+    "name": "toLocaleLowerCase",
+    "url": "JavaScript/Reference/Global_Objects/String/toLocaleLowerCase"
+  },
+  {
+    "name": "toLocaleUpperCase",
+    "url": "JavaScript/Reference/Global_Objects/String/toLocaleUpperCase"
+  },
+  {
+    "name": "toLowerCase",
+    "url": "JavaScript/Reference/Global_Objects/String/toLowerCase"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/String/toString"
+  },
+  {
+    "name": "toUpperCase",
+    "url": "JavaScript/Reference/Global_Objects/String/toUpperCase"
+  },
+  {
+    "name": "trim",
+    "url": "JavaScript/Reference/Global_Objects/String/trim"
+  },
+  {
+    "name": "trimEnd",
+    "url": "JavaScript/Reference/Global_Objects/String/trimEnd"
+  },
+  {
+    "name": "trimStart",
+    "url": "JavaScript/Reference/Global_Objects/String/trimStart"
+  },
+  {
+    "name": "valueOf",
+    "url": "JavaScript/Reference/Global_Objects/String/valueOf"
+  },
+  {
+    "name": "exec",
+    "url": "JavaScript/Reference/Global_Objects/RegExp/exec"
+  },
+  {
+    "name": "test",
+    "url": "JavaScript/Reference/Global_Objects/RegExp/test"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/RegExp/toString"
+  },
+  {
+    "name": "from",
+    "url": "JavaScript/Reference/Global_Objects/Array/from"
+  },
+  {
+    "name": "fromAsync",
+    "url": "JavaScript/Reference/Global_Objects/Array/fromAsync"
+  },
+  {
+    "name": "isArray",
+    "url": "JavaScript/Reference/Global_Objects/Array/isArray"
+  },
+  {
+    "name": "of",
+    "url": "JavaScript/Reference/Global_Objects/Array/of"
+  },
+  {
+    "name": "at",
+    "url": "JavaScript/Reference/Global_Objects/Array/at"
+  },
+  {
+    "name": "concat",
+    "url": "JavaScript/Reference/Global_Objects/Array/concat"
+  },
+  {
+    "name": "copyWithin",
+    "url": "JavaScript/Reference/Global_Objects/Array/copyWithin"
+  },
+  {
+    "name": "entries",
+    "url": "JavaScript/Reference/Global_Objects/Array/entries"
+  },
+  {
+    "name": "every",
+    "url": "JavaScript/Reference/Global_Objects/Array/every"
+  },
+  {
+    "name": "fill",
+    "url": "JavaScript/Reference/Global_Objects/Array/fill"
+  },
+  {
+    "name": "filter",
+    "url": "JavaScript/Reference/Global_Objects/Array/filter"
+  },
+  {
+    "name": "find",
+    "url": "JavaScript/Reference/Global_Objects/Array/find"
+  },
+  {
+    "name": "findIndex",
+    "url": "JavaScript/Reference/Global_Objects/Array/findIndex"
+  },
+  {
+    "name": "findLast",
+    "url": "JavaScript/Reference/Global_Objects/Array/findLast"
+  },
+  {
+    "name": "findLastIndex",
+    "url": "JavaScript/Reference/Global_Objects/Array/findLastIndex"
+  },
+  {
+    "name": "flat",
+    "url": "JavaScript/Reference/Global_Objects/Array/flat"
+  },
+  {
+    "name": "flatMap",
+    "url": "JavaScript/Reference/Global_Objects/Array/flatMap"
+  },
+  {
+    "name": "forEach",
+    "url": "JavaScript/Reference/Global_Objects/Array/forEach"
+  },
+  {
+    "name": "includes",
+    "url": "JavaScript/Reference/Global_Objects/Array/includes"
+  },
+  {
+    "name": "indexOf",
+    "url": "JavaScript/Reference/Global_Objects/Array/indexOf"
+  },
+  {
+    "name": "join",
+    "url": "JavaScript/Reference/Global_Objects/Array/join"
+  },
+  {
+    "name": "keys",
+    "url": "JavaScript/Reference/Global_Objects/Array/keys"
+  },
+  {
+    "name": "lastIndexOf",
+    "url": "JavaScript/Reference/Global_Objects/Array/lastIndexOf"
+  },
+  {
+    "name": "map",
+    "url": "JavaScript/Reference/Global_Objects/Array/map"
+  },
+  {
+    "name": "pop",
+    "url": "JavaScript/Reference/Global_Objects/Array/pop"
+  },
+  {
+    "name": "push",
+    "url": "JavaScript/Reference/Global_Objects/Array/push"
+  },
+  {
+    "name": "reduce",
+    "url": "JavaScript/Reference/Global_Objects/Array/reduce"
+  },
+  {
+    "name": "reduceRight",
+    "url": "JavaScript/Reference/Global_Objects/Array/reduceRight"
+  },
+  {
+    "name": "reverse",
+    "url": "JavaScript/Reference/Global_Objects/Array/reverse"
+  },
+  {
+    "name": "shift",
+    "url": "JavaScript/Reference/Global_Objects/Array/shift"
+  },
+  {
+    "name": "slice",
+    "url": "JavaScript/Reference/Global_Objects/Array/slice"
+  },
+  {
+    "name": "some",
+    "url": "JavaScript/Reference/Global_Objects/Array/some"
+  },
+  {
+    "name": "sort",
+    "url": "JavaScript/Reference/Global_Objects/Array/sort"
+  },
+  {
+    "name": "splice",
+    "url": "JavaScript/Reference/Global_Objects/Array/splice"
+  },
+  {
+    "name": "toLocaleString",
+    "url": "JavaScript/Reference/Global_Objects/Array/toLocaleString"
+  },
+  {
+    "name": "toReversed",
+    "url": "JavaScript/Reference/Global_Objects/Array/toReversed"
+  },
+  {
+    "name": "toSorted",
+    "url": "JavaScript/Reference/Global_Objects/Array/toSorted"
+  },
+  {
+    "name": "toSpliced",
+    "url": "JavaScript/Reference/Global_Objects/Array/toSpliced"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/Array/toString"
+  },
+  {
+    "name": "unshift",
+    "url": "JavaScript/Reference/Global_Objects/Array/unshift"
+  },
+  {
+    "name": "values",
+    "url": "JavaScript/Reference/Global_Objects/Array/values"
+  },
+  {
+    "name": "with",
+    "url": "JavaScript/Reference/Global_Objects/Array/with"
+  },
+  {
+    "name": "from",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/from"
+  },
+  {
+    "name": "of",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/of"
+  },
+  {
+    "name": "at",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/at"
+  },
+  {
+    "name": "copyWithin",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/copyWithin"
+  },
+  {
+    "name": "entries",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/entries"
+  },
+  {
+    "name": "every",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/every"
+  },
+  {
+    "name": "fill",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/fill"
+  },
+  {
+    "name": "filter",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/filter"
+  },
+  {
+    "name": "find",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/find"
+  },
+  {
+    "name": "findIndex",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/findIndex"
+  },
+  {
+    "name": "findLast",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/findLast"
+  },
+  {
+    "name": "findLastIndex",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/findLastIndex"
+  },
+  {
+    "name": "forEach",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/forEach"
+  },
+  {
+    "name": "includes",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/includes"
+  },
+  {
+    "name": "indexOf",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/indexOf"
+  },
+  {
+    "name": "join",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/join"
+  },
+  {
+    "name": "keys",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/keys"
+  },
+  {
+    "name": "lastIndexOf",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/lastIndexOf"
+  },
+  {
+    "name": "map",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/map"
+  },
+  {
+    "name": "reduce",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/reduce"
+  },
+  {
+    "name": "reduceRight",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/reduceRight"
+  },
+  {
+    "name": "reverse",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/reverse"
+  },
+  {
+    "name": "set",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/set"
+  },
+  {
+    "name": "slice",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/slice"
+  },
+  {
+    "name": "some",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/some"
+  },
+  {
+    "name": "sort",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/sort"
+  },
+  {
+    "name": "subarray",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/subarray"
+  },
+  {
+    "name": "toLocaleString",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/toLocaleString"
+  },
+  {
+    "name": "toReversed",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/toReversed"
+  },
+  {
+    "name": "toSorted",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/toSorted"
+  },
+  {
+    "name": "toString",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/toString"
+  },
+  {
+    "name": "values",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/values"
+  },
+  {
+    "name": "with",
+    "url": "JavaScript/Reference/Global_Objects/TypedArray/with"
+  },
+  {
+    "name": "clear",
+    "url": "JavaScript/Reference/Global_Objects/Map/clear"
+  },
+  {
+    "name": "delete",
+    "url": "JavaScript/Reference/Global_Objects/Map/delete"
+  },
+  {
+    "name": "entries",
+    "url": "JavaScript/Reference/Global_Objects/Map/entries"
+  },
+  {
+    "name": "forEach",
+    "url": "JavaScript/Reference/Global_Objects/Map/forEach"
+  },
+  {
+    "name": "get",
+    "url": "JavaScript/Reference/Global_Objects/Map/get"
+  },
+  {
+    "name": "has",
+    "url": "JavaScript/Reference/Global_Objects/Map/has"
+  },
+  {
+    "name": "keys",
+    "url": "JavaScript/Reference/Global_Objects/Map/keys"
+  },
+  {
+    "name": "set",
+    "url": "JavaScript/Reference/Global_Objects/Map/set"
+  },
+  {
+    "name": "values",
+    "url": "JavaScript/Reference/Global_Objects/Map/values"
+  },
+  {
+    "name": "add",
+    "url": "JavaScript/Reference/Global_Objects/Set/add"
+  },
+  {
+    "name": "clear",
+    "url": "JavaScript/Reference/Global_Objects/Set/clear"
+  },
+  {
+    "name": "delete",
+    "url": "JavaScript/Reference/Global_Objects/Set/delete"
+  },
+  {
+    "name": "entries",
+    "url": "JavaScript/Reference/Global_Objects/Set/entries"
+  },
+  {
+    "name": "forEach",
+    "url": "JavaScript/Reference/Global_Objects/Set/forEach"
+  },
+  {
+    "name": "has",
+    "url": "JavaScript/Reference/Global_Objects/Set/has"
+  },
+  {
+    "name": "values",
+    "url": "JavaScript/Reference/Global_Objects/Set/values"
+  },
+  {
+    "name": "keys",
+    "url": "JavaScript/Reference/Global_Objects/Set/keys"
+  },
+  {
+    "name": "delete",
+    "url": "JavaScript/Reference/Global_Objects/WeakMap/delete"
+  },
+  {
+    "name": "get",
+    "url": "JavaScript/Reference/Global_Objects/WeakMap/get"
+  },
+  {
+    "name": "has",
+    "url": "JavaScript/Reference/Global_Objects/WeakMap/has"
+  },
+  {
+    "name": "set",
+    "url": "JavaScript/Reference/Global_Objects/WeakMap/set"
+  },
+  {
+    "name": "add",
+    "url": "JavaScript/Reference/Global_Objects/WeakSet/add"
+  },
+  {
+    "name": "delete",
+    "url": "JavaScript/Reference/Global_Objects/WeakSet/delete"
+  },
+  {
+    "name": "has",
+    "url": "JavaScript/Reference/Global_Objects/WeakSet/has"
+  },
+  {
+    "name": "isView",
+    "url": "JavaScript/Reference/Global_Objects/ArrayBuffer/isView"
+  },
+  {
+    "name": "slice",
+    "url": "JavaScript/Reference/Global_Objects/ArrayBuffer/slice"
+  },
+  {
+    "name": "slice",
+    "url": "JavaScript/Reference/Global_Objects/SharedArrayBuffer/slice"
+  },
+  {
+    "name": "getInt8",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getInt8"
+  },
+  {
+    "name": "getUint8",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getUint8"
+  },
+  {
+    "name": "getInt16",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getInt16"
+  },
+  {
+    "name": "getUint16",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getUint16"
+  },
+  {
+    "name": "getInt32",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getInt32"
+  },
+  {
+    "name": "getUint32",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getUint32"
+  },
+  {
+    "name": "getBigInt64",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getBigInt64"
+  },
+  {
+    "name": "getBigUint64",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getBigUint64"
+  },
+  {
+    "name": "getFloat32",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getFloat32"
+  },
+  {
+    "name": "getFloat64",
+    "url": "JavaScript/Reference/Global_Objects/DataView/getFloat64"
+  },
+  {
+    "name": "setInt8",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setInt8"
+  },
+  {
+    "name": "setUint8",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setUint8"
+  },
+  {
+    "name": "setInt16",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setInt16"
+  },
+  {
+    "name": "setUint16",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setUint16"
+  },
+  {
+    "name": "setInt32",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setInt32"
+  },
+  {
+    "name": "setUint32",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setUint32"
+  },
+  {
+    "name": "setBigInt64",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setBigInt64"
+  },
+  {
+    "name": "setBigUint64",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setBigUint64"
+  },
+  {
+    "name": "setFloat32",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setFloat32"
+  },
+  {
+    "name": "setFloat64",
+    "url": "JavaScript/Reference/Global_Objects/DataView/setFloat64"
+  },
+  {
+    "name": "add",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/add"
+  },
+  {
+    "name": "and",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/and"
+  },
+  {
+    "name": "compareExchange",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/compareExchange"
+  },
+  {
+    "name": "exchange",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/exchange"
+  },
+  {
+    "name": "load",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/load"
+  },
+  {
+    "name": "or",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/or"
+  },
+  {
+    "name": "store",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/store"
+  },
+  {
+    "name": "sub",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/sub"
+  },
+  {
+    "name": "wait",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/wait"
+  },
+  {
+    "name": "notify",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/notify"
+  },
+  {
+    "name": "isLockFree",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/isLockFree"
+  },
+  {
+    "name": "wake",
+    "url": "JavaScript/Reference/Global_Objects/Atomics/wake"
+  },
+  {
+    "name": "parse",
+    "url": "JavaScript/Reference/Global_Objects/JSON/parse"
+  },
+  {
+    "name": "stringify",
+    "url": "JavaScript/Reference/Global_Objects/JSON/stringify"
+  },
+  {
+    "name": "deref",
+    "url": "JavaScript/Reference/Global_Objects/WeakRef/deref"
+  },
+  {
+    "name": "register",
+    "url": "JavaScript/Reference/Global_Objects/FinalizationRegistry/register"
+  },
+  {
+    "name": "unregister",
+    "url": "JavaScript/Reference/Global_Objects/FinalizationRegistry/unregister"
+  },
+  {
+    "name": "next",
+    "url": "JavaScript/Reference/Global_Objects/Iterator/next"
+  },
+  {
+    "name": "return",
+    "url": "JavaScript/Reference/Global_Objects/Iterator/return"
+  },
+  {
+    "name": "throw",
+    "url": "JavaScript/Reference/Global_Objects/Iterator/throw"
+  },
+  {
+    "name": "next",
+    "url": "JavaScript/Reference/Global_Objects/AsyncIterator/next"
+  },
+  {
+    "name": "return",
+    "url": "JavaScript/Reference/Global_Objects/AsyncIterator/return"
+  },
+  {
+    "name": "throw",
+    "url": "JavaScript/Reference/Global_Objects/AsyncIterator/throw"
+  },
+  {
+    "name": "all",
+    "url": "JavaScript/Reference/Global_Objects/Promise/all"
+  },
+  {
+    "name": "allSettled",
+    "url": "JavaScript/Reference/Global_Objects/Promise/allSettled"
+  },
+  {
+    "name": "any",
+    "url": "JavaScript/Reference/Global_Objects/Promise/any"
+  },
+  {
+    "name": "race",
+    "url": "JavaScript/Reference/Global_Objects/Promise/race"
+  },
+  {
+    "name": "reject",
+    "url": "JavaScript/Reference/Global_Objects/Promise/reject"
+  },
+  {
+    "name": "resolve",
+    "url": "JavaScript/Reference/Global_Objects/Promise/resolve"
+  },
+  {
+    "name": "then",
+    "url": "JavaScript/Reference/Global_Objects/Promise/then"
+  },
+  {
+    "name": "catch",
+    "url": "JavaScript/Reference/Global_Objects/Promise/catch"
+  },
+  {
+    "name": "finally",
+    "url": "JavaScript/Reference/Global_Objects/Promise/finally"
+  },
+  {
+    "name": "next",
+    "url": "JavaScript/Reference/Global_Objects/Generator/next"
+  },
+  {
+    "name": "return",
+    "url": "JavaScript/Reference/Global_Objects/Generator/return"
+  },
+  {
+    "name": "throw",
+    "url": "JavaScript/Reference/Global_Objects/Generator/throw"
+  },
+  {
+    "name": "next",
+    "url": "JavaScript/Reference/Global_Objects/AsyncGenerator/next"
+  },
+  {
+    "name": "return",
+    "url": "JavaScript/Reference/Global_Objects/AsyncGenerator/return"
+  },
+  {
+    "name": "throw",
+    "url": "JavaScript/Reference/Global_Objects/AsyncGenerator/throw"
+  },
+  {
+    "name": "apply",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/apply"
+  },
+  {
+    "name": "construct",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/construct"
+  },
+  {
+    "name": "defineProperty",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/defineProperty"
+  },
+  {
+    "name": "deleteProperty",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/deleteProperty"
+  },
+  {
+    "name": "get",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/get"
+  },
+  {
+    "name": "getOwnPropertyDescriptor",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/getOwnPropertyDescriptor"
+  },
+  {
+    "name": "getPrototypeOf",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/getPrototypeOf"
+  },
+  {
+    "name": "has",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/has"
+  },
+  {
+    "name": "isExtensible",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/isExtensible"
+  },
+  {
+    "name": "ownKeys",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/ownKeys"
+  },
+  {
+    "name": "preventExtensions",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/preventExtensions"
+  },
+  {
+    "name": "set",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/set"
+  },
+  {
+    "name": "setPrototypeOf",
+    "url": "JavaScript/Reference/Global_Objects/Reflect/setPrototypeOf"
+  },
+  {
+    "name": "revocable",
+    "url": "JavaScript/Reference/Global_Objects/Proxy/revocable"
+  },
+  {
+    "name": "compare",
+    "url": "JavaScript/Reference/Global_Objects/Intl/Collator/compare"
+  },
+  {
+    "name": "format",
+    "url": "JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format"
+  },
+  {
+    "name": "formatRange",
+    "url": "JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatRange"
+  },
+  {
+    "name": "format",
+    "url": "JavaScript/Reference/Global_Objects/Intl/NumberFormat/format"
+  },
+  {
+    "name": "resolvedOptions",
+    "url": "JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/resolvedOptions"
+  },
+  {
+    "name": "adoptNode",
+    "url": "API/Document/adoptNode"
+  },
+  {
+    "name": "append",
+    "url": "API/Document/append"
+  },
+  {
+    "name": "caretPositionFromPoint",
+    "url": "API/Document/caretPositionFromPoint"
+  },
+  {
+    "name": "caretRangeFromPoint",
+    "url": "API/Document/caretRangeFromPoint"
+  },
+  {
+    "name": "createAttribute",
+    "url": "API/Document/createAttribute"
+  },
+  {
+    "name": "createAttributeNS",
+    "url": "API/Document/createAttributeNS"
+  },
+  {
+    "name": "createCDATASection",
+    "url": "API/Document/createCDATASection"
+  },
+  {
+    "name": "createComment",
+    "url": "API/Document/createComment"
+  },
+  {
+    "name": "createDocumentFragment",
+    "url": "API/Document/createDocumentFragment"
+  },
+  {
+    "name": "createElement",
+    "url": "API/Document/createElement"
+  },
+  {
+    "name": "createElementNS",
+    "url": "API/Document/createElementNS"
+  },
+  {
+    "name": "createEvent",
+    "url": "API/Document/createEvent"
+  },
+  {
+    "name": "createNodeIterator",
+    "url": "API/Document/createNodeIterator"
+  },
+  {
+    "name": "createProcessingInstruction",
+    "url": "API/Document/createProcessingInstruction"
+  },
+  {
+    "name": "createRange",
+    "url": "API/Document/createRange"
+  },
+  {
+    "name": "createTextNode",
+    "url": "API/Document/createTextNode"
+  },
+  {
+    "name": "createTouch",
+    "url": "API/Document/createTouch"
+  },
+  {
+    "name": "createTouchList",
+    "url": "API/Document/createTouchList"
+  },
+  {
+    "name": "createTreeWalker",
+    "url": "API/Document/createTreeWalker"
+  },
+  {
+    "name": "elementFromPoint",
+    "url": "API/Document/elementFromPoint"
+  },
+  {
+    "name": "elementsFromPoint",
+    "url": "API/Document/elementsFromPoint"
+  },
+  {
+    "name": "enableStyleSheetsForSet",
+    "url": "API/Document/enableStyleSheetsForSet"
+  },
+  {
+    "name": "exitFullscreen",
+    "url": "API/Document/exitFullscreen"
+  },
+  {
+    "name": "exitPictureInPicture",
+    "url": "API/Document/exitPictureInPicture"
+  },
+  {
+    "name": "exitPointerLock",
+    "url": "API/Document/exitPointerLock"
+  },
+  {
+    "name": "getAnimations",
+    "url": "API/Document/getAnimations"
+  },
+  {
+    "name": "getElementById",
+    "url": "API/Document/getElementById"
+  },
+  {
+    "name": "getElementsByClassName",
+    "url": "API/Document/getElementsByClassName"
+  },
+  {
+    "name": "getElementsByTagName",
+    "url": "API/Document/getElementsByTagName"
+  },
+  {
+    "name": "getElementsByTagNameNS",
+    "url": "API/Document/getElementsByTagNameNS"
+  },
+  {
+    "name": "getSelection",
+    "url": "API/Document/getSelection"
+  },
+  {
+    "name": "hasStorageAccess",
+    "url": "API/Document/hasStorageAccess"
+  },
+  {
+    "name": "hasUnpartitionedCookieAccess",
+    "url": "API/Document/hasUnpartitionedCookieAccess"
+  },
+  {
+    "name": "importNode",
+    "url": "API/Document/importNode"
+  },
+  {
+    "name": "moveBefore",
+    "url": "API/Document/moveBefore"
+  },
+  {
+    "name": "mozSetImageElement",
+    "url": "API/Document/mozSetImageElement"
+  },
+  {
+    "name": "prepend",
+    "url": "API/Document/prepend"
+  },
+  {
+    "name": "querySelector",
+    "url": "API/Document/querySelector"
+  },
+  {
+    "name": "querySelectorAll",
+    "url": "API/Document/querySelectorAll"
+  },
+  {
+    "name": "releaseCapture",
+    "url": "API/Document/releaseCapture"
+  },
+  {
+    "name": "replaceChildren",
+    "url": "API/Document/replaceChildren"
+  },
+  {
+    "name": "requestStorageAccess",
+    "url": "API/Document/requestStorageAccess"
+  },
+  {
+    "name": "requestStorageAccessFor",
+    "url": "API/Document/requestStorageAccessFor"
+  },
+  {
+    "name": "startViewTransition",
+    "url": "API/Document/startViewTransition"
+  },
+  {
+    "name": "createExpression",
+    "url": "API/Document/createExpression"
+  },
+  {
+    "name": "createNSResolver",
+    "url": "API/Document/createNSResolver"
+  },
+  {
+    "name": "evaluate",
+    "url": "API/Document/evaluate"
+  },
+  {
+    "name": "clear",
+    "url": "API/Document/clear"
+  },
+  {
+    "name": "close",
+    "url": "API/Document/close"
+  },
+  {
+    "name": "execCommand",
+    "url": "API/Document/execCommand"
+  },
+  {
+    "name": "getElementsByName",
+    "url": "API/Document/getElementsByName"
+  },
+  {
+    "name": "hasFocus",
+    "url": "API/Document/hasFocus"
+  },
+  {
+    "name": "open",
+    "url": "API/Document/open"
+  },
+  {
+    "name": "queryCommandEnabled",
+    "url": "API/Document/queryCommandEnabled"
+  },
+  {
+    "name": "queryCommandState",
+    "url": "API/Document/queryCommandState"
+  },
+  {
+    "name": "queryCommandSupported",
+    "url": "API/Document/queryCommandSupported"
+  },
+  {
+    "name": "write",
+    "url": "API/Document/write"
+  },
+  {
+    "name": "writeln",
+    "url": "API/Document/writeln"
+  },
+  {
+    "name": "parseHTML",
+    "url": "API/Document/parseHTML"
+  },
+  {
+    "name": "parseHTMLUnsafe",
+    "url": "API/Document/parseHTMLUnsafe"
+  },
+  {
+    "name": "atob",
+    "url": "API/Window/atob"
+  },
+  {
+    "name": "alert",
+    "url": "API/Window/alert"
+  },
+  {
+    "name": "blur",
+    "url": "API/Window/blur"
+  },
+  {
+    "name": "btoa",
+    "url": "API/Window/btoa"
+  },
+  {
+    "name": "cancelAnimationFrame",
+    "url": "API/Window/cancelAnimationFrame"
+  },
+  {
+    "name": "cancelIdleCallback",
+    "url": "API/Window/cancelIdleCallback"
+  },
+  {
+    "name": "clearInterval",
+    "url": "API/Window/clearInterval"
+  },
+  {
+    "name": "clearTimeout",
+    "url": "API/Window/clearTimeout"
+  },
+  {
+    "name": "close",
+    "url": "API/Window/close"
+  },
+  {
+    "name": "confirm",
+    "url": "API/Window/confirm"
+  },
+  {
+    "name": "createImageBitmap",
+    "url": "API/Window/createImageBitmap"
+  },
+  {
+    "name": "dump",
+    "url": "API/Window/dump"
+  },
+  {
+    "name": "fetch",
+    "url": "API/Window/fetch"
+  },
+  {
+    "name": "fetchLater",
+    "url": "API/Window/fetchLater"
+  },
+  {
+    "name": "find",
+    "url": "API/Window/find"
+  },
+  {
+    "name": "focus",
+    "url": "API/Window/focus"
+  },
+  {
+    "name": "getComputedStyle",
+    "url": "API/Window/getComputedStyle"
+  },
+  {
+    "name": "getDefaultComputedStyle",
+    "url": "API/Window/getDefaultComputedStyle"
+  },
+  {
+    "name": "getScreenDetails",
+    "url": "API/Window/getScreenDetails"
+  },
+  {
+    "name": "getSelection",
+    "url": "API/Window/getSelection"
+  },
+  {
+    "name": "matchMedia",
+    "url": "API/Window/matchMedia"
+  },
+  {
+    "name": "moveBy",
+    "url": "API/Window/moveBy"
+  },
+  {
+    "name": "moveTo",
+    "url": "API/Window/moveTo"
+  },
+  {
+    "name": "open",
+    "url": "API/Window/open"
+  },
+  {
+    "name": "postMessage",
+    "url": "API/Window/postMessage"
+  },
+  {
+    "name": "print",
+    "url": "API/Window/print"
+  },
+  {
+    "name": "prompt",
+    "url": "API/Window/prompt"
+  },
+  {
+    "name": "queryLocalFonts",
+    "url": "API/Window/queryLocalFonts"
+  },
+  {
+    "name": "queueMicrotask",
+    "url": "API/Window/queueMicrotask"
+  },
+  {
+    "name": "reportError",
+    "url": "API/Window/reportError"
+  },
+  {
+    "name": "requestAnimationFrame",
+    "url": "API/Window/requestAnimationFrame"
+  },
+  {
+    "name": "requestIdleCallback",
+    "url": "API/Window/requestIdleCallback"
+  },
+  {
+    "name": "resizeBy",
+    "url": "API/Window/resizeBy"
+  },
+  {
+    "name": "resizeTo",
+    "url": "API/Window/resizeTo"
+  },
+  {
+    "name": "scroll",
+    "url": "API/Window/scroll"
+  },
+  {
+    "name": "scrollBy",
+    "url": "API/Window/scrollBy"
+  },
+  {
+    "name": "scrollByLines",
+    "url": "API/Window/scrollByLines"
+  },
+  {
+    "name": "scrollByPages",
+    "url": "API/Window/scrollByPages"
+  },
+  {
+    "name": "scrollTo",
+    "url": "API/Window/scrollTo"
+  },
+  {
+    "name": "setInterval",
+    "url": "API/Window/setInterval"
+  },
+  {
+    "name": "setTimeout",
+    "url": "API/Window/setTimeout"
+  },
+  {
+    "name": "showDirectoryPicker",
+    "url": "API/Window/showDirectoryPicker"
+  },
+  {
+    "name": "showOpenFilePicker",
+    "url": "API/Window/showOpenFilePicker"
+  },
+  {
+    "name": "showSaveFilePicker",
+    "url": "API/Window/showSaveFilePicker"
+  },
+  {
+    "name": "sizeToContent",
+    "url": "API/Window/sizeToContent"
+  },
+  {
+    "name": "stop",
+    "url": "API/Window/stop"
+  },
+  {
+    "name": "structuredClone",
+    "url": "API/Window/structuredClone"
+  },
+  {
+    "name": "captureEvents",
+    "url": "API/Window/captureEvents"
+  },
+  {
+    "name": "clearImmediate",
+    "url": "API/Window/clearImmediate"
+  },
+  {
+    "name": "releaseEvents",
+    "url": "API/Window/releaseEvents"
+  },
+  {
+    "name": "requestFileSystem",
+    "url": "API/Window/requestFileSystem"
+  },
+  {
+    "name": "setImmediate",
+    "url": "API/Window/setImmediate"
+  },
+  {
+    "name": "setResizable",
+    "url": "API/Window/setResizable"
+  },
+  {
+    "name": "webkitConvertPointFromNodeToPage",
+    "url": "API/Window/webkitConvertPointFromNodeToPage"
+  },
+  {
+    "name": "webkitConvertPointFromPageToNode",
+    "url": "API/Window/webkitConvertPointFromPageToNode"
+  },
+  {
+    "name": "canShare",
+    "url": "API/Navigator/canShare"
+  },
+  {
+    "name": "clearAppBadge",
+    "url": "API/Navigator/clearAppBadge"
+  },
+  {
+    "name": "deprecatedReplaceInURN",
+    "url": "API/Navigator/deprecatedReplaceInURN"
+  },
+  {
+    "name": "getAutoplayPolicy",
+    "url": "API/Navigator/getAutoplayPolicy"
+  },
+  {
+    "name": "getBattery",
+    "url": "API/Navigator/getBattery"
+  },
+  {
+    "name": "getGamepads",
+    "url": "API/Navigator/getGamepads"
+  },
+  {
+    "name": "getInstalledRelatedApps",
+    "url": "API/Navigator/getInstalledRelatedApps"
+  },
+  {
+    "name": "registerProtocolHandler",
+    "url": "API/Navigator/registerProtocolHandler"
+  },
+  {
+    "name": "requestMediaKeySystemAccess",
+    "url": "API/Navigator/requestMediaKeySystemAccess"
+  },
+  {
+    "name": "requestMIDIAccess",
+    "url": "API/Navigator/requestMIDIAccess"
+  },
+  {
+    "name": "sendBeacon",
+    "url": "API/Navigator/sendBeacon"
+  },
+  {
+    "name": "setAppBadge",
+    "url": "API/Navigator/setAppBadge"
+  },
+  {
+    "name": "share",
+    "url": "API/Navigator/share"
+  },
+  {
+    "name": "vibrate",
+    "url": "API/Navigator/vibrate"
+  },
+  {
+    "name": "unregisterProtocolHandler",
+    "url": "API/Navigator/unregisterProtocolHandler"
+  },
+  {
+    "name": "getUserMedia",
+    "url": "API/Navigator/getUserMedia"
+  },
+  {
+    "name": "getVRDisplays",
+    "url": "API/Navigator/getVRDisplays"
+  },
+  {
+    "name": "javaEnabled",
+    "url": "API/Navigator/javaEnabled"
+  },
+  {
+    "name": "taintEnabled",
+    "url": "API/Navigator/taintEnabled"
+  },
+  {
+    "name": "getCurrentPosition",
+    "url": "API/Geolocation/getCurrentPosition"
+  },
+  {
+    "name": "watchPosition",
+    "url": "API/Geolocation/watchPosition"
+  },
+  {
+    "name": "clearWatch",
+    "url": "API/Geolocation/clearWatch"
+  }
+]

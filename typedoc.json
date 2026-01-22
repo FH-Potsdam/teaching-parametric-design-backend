@@ -1,0 +1,11 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts", "src/regex.ts", "src/openRouter.ts", "src/functionLinks.ts", "src/enhanceCode.ts"],
+  "out": "docs/code",
+  "exclude": ["test/**/*.ts"],
+  "excludeNotDocumented": false,
+  "excludeInternal": false,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "categorizeByGroup": true
+}

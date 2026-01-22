@@ -7,7 +7,9 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "test": "NODE_ENV=test vitest run"
+    "test": "NODE_ENV=test vitest run",
+    "docs": "typedoc --options typedoc.json",
+    "docs:api": "node scripts/buildSwaggerUi.js"
   },
   "keywords": [
     "openrouter",
@@ -17,6 +19,8 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@openrouter/sdk": "^0.3.14",
+    "dotenv": "^17.2.3",
     "express": "^4.19.2",
     "highlight.js": "^11.9.0"
   },
@@ -24,9 +28,11 @@
     "@types/express": "^4.17.21",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^20.14.5",
-    "jsdom": "^24.1.1",
+    "jsdom": "^22.1.0",
+    "swagger-ui-dist": "^5.20.1",
     "ts-node": "^10.9.2",
+    "typedoc": "^0.27.7",
     "typescript": "^5.5.4",
-    "vitest": "^1.6.0"
+    "vitest": "^4.0.17"
   }
 }
