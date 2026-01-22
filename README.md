@@ -17,6 +17,8 @@ npm install
 - `npm run build` — compile TypeScript to `dist/`.
 - `npm start` — run the compiled server from `dist/`.
 - `npm test` — run the Vitest suite (uses JSDOM for HTML validation).
+- `npm run docs` — generate TypeDoc output in `docs/code/`.
+- `npm run docs:api` — build the Swagger UI bundle into `docs/api/`.
 
 ## API
 
@@ -26,14 +28,16 @@ Request body:
 
 ```json
 {
-  "question": "How do I animate a div on click?"
+  "question": "How do I animate a div on click?",
+  "language": "en"
 }
 ```
 
 Behavior:
+- Supports `language: "en" | "de"` (defaults to English) for localized links.
 - Wraps the question with a system prompt that demands **only JavaScript code** (no Markdown).
 - Sends the request to OpenRouter using the configured model.
-- Highlights the returned JavaScript with `highlight.js` and converts selected function names into links to MDN.
+- Highlights the returned JavaScript with `highlight.js` and converts selected function names into links.
 
 Response body:
 
@@ -41,9 +45,32 @@ Response body:
 {
   "html": "<pre><code class=\"hljs language-javascript\">…</code></pre>",
   "raw": "const sketch = ...",
-  "functionCalls": ["createCanvas", "background", "console.log"]
+  "functionCalls": [
+    { "name": "createCanvas", "url": "https://developer.mozilla.org/..." }
+  ]
 }
 ```
+
+`POST /api/linkify`
+
+Request body:
+
+```json
+{
+  "code": "const el = document.querySelector('.box');",
+  "language": "en"
+}
+```
+
+Behavior:
+- Skips OpenRouter and linkifies the provided code directly.
+- Returns highlighted HTML plus the extracted function link metadata.
+
+Response body: same shape as `/api/generate`.
+
+`GET /api/ping`
+
+Returns `pong` as a quick health check.
 
 ## OpenAPI
 
@@ -51,13 +78,21 @@ See the OpenAPI 3.0 specification in `openapi.yaml`.
 
 ## Swagger UI
 
-Build the static Swagger UI bundle into `docs-api/`:
+Build the static Swagger UI bundle into `docs/api/`:
 
 ```bash
 npm run docs:api
 ```
 
-When the server is running, visit `http://localhost:3000/docs/` to view the docs.
+When the server is running, visit `http://localhost:3000/docs/` to view the docs (ensure the server is pointing at the Swagger output directory).
+
+## Code Docs
+
+Generate the TypeDoc documentation into `docs/code/`:
+
+```bash
+npm run docs
+```
 
 ## Environment Variables
 
@@ -70,4 +105,4 @@ When the server is running, visit `http://localhost:3000/docs/` to view the docs
 ## Notes
 
 - The service expects the OpenRouter API key to be present at runtime. Without it, requests will fail.
-- Function references such as `fetch`, `console.log`, `document.querySelector`, and `addEventListener` are automatically linked to MDN in the generated HTML.
+- Function references are linked against MDN, p5.js, and Parametric Design references (localized when available).

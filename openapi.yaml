@@ -48,6 +48,48 @@ paths:
                 generationFailed:
                   value:
                     error: Failed to generate code
+  /api/linkify:
+    post:
+      summary: Linkify provided JavaScript and return metadata
+      description: Returns highlighted HTML, raw source, and extracted function link metadata without calling OpenRouter.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LinkifyRequest"
+            examples:
+              default:
+                value:
+                  code: const el = document.querySelector('.box');
+                  language: en
+      responses:
+        "200":
+          description: Highlighted HTML and metadata.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GenerateResponse"
+        "400":
+          description: Missing or invalid request payload.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                missingCode:
+                  value:
+                    error: Code is required
+        "500":
+          description: Failed to linkify code.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                linkifyFailed:
+                  value:
+                    error: Failed to linkify code
   /api/ping:
     get:
       summary: Health check endpoint
@@ -72,6 +114,22 @@ components:
         question:
           type: string
           description: Prompt describing the JavaScript code to generate.
+        language:
+          type: string
+          description: Language code used to resolve documentation links.
+          enum:
+            - en
+            - de
+          default: en
+    LinkifyRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - code
+      properties:
+        code:
+          type: string
+          description: JavaScript source to highlight and linkify.
         language:
           type: string
           description: Language code used to resolve documentation links.
