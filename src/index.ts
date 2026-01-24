@@ -8,6 +8,26 @@ import { logGenerateResponse } from "./logging";
 import { requestOpenRouterCode } from "./openRouter";
 
 const app = express();
+const allowedOrigins = new Set([
+  "https://parametric-design.fh-potsdam.de",
+  "http://parametric-design.fh-potsdam.de",
+]);
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.has(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Vary", "Origin");
+    res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  }
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
+
+  return next();
+});
 app.use(express.json());
 app.use(express.static(path.join(process.cwd(), "public")));
 app.use("/docs", express.static(path.join(process.cwd(), "docs-api")));
