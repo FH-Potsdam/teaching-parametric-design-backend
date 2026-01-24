@@ -4,6 +4,7 @@ import path from "path";
 
 import { enhanceCode } from "./enhanceCode";
 import { loadFunctionLinks, resolveLanguage } from "./functionLinks";
+import { logGenerateResponse } from "./logging";
 import { requestOpenRouterCode } from "./openRouter";
 
 const app = express();
@@ -31,7 +32,16 @@ async function handleGenerate(req: Request, res: Response) {
     const code = await requestOpenRouterCode(question);
     const functionLinks = loadFunctionLinks(language);
     const html = enhanceCode(code, functionLinks, language);
-    return res.json({ html: html.code, raw: code, functionCalls: html.functions });
+    const responsePayload = { html: html.code, raw: code, functionCalls: html.functions };
+
+    try {
+      await logGenerateResponse(responsePayload);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error("Failed to write generate log", error);
+    }
+
+    return res.json(responsePayload);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(error);

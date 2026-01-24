@@ -52,12 +52,13 @@ function draw() {
 - You may extend these functions.
 - Output ONLY valid, executable JavaScript.
 - You may change canvas size if neccessary
-- JavaScript comments (// or /* */) inside the code are allowed and encouraged to explain the logic.
+- DO ADD JavaScript comments (// or /* */) inside the code to explain the logic.
 - Do NOT use Markdown or explanations outside the code.
 - Do NOT use code fences.
 - Do NOT add headers, summaries, or trailing text.
 - The code output will be parsed and executed directly in a JavaScript runtime with p5.js, p5.js-svg, and p5.sound available.
 
+If the user requests something else than code, return {"code": ""}
 If you cannot comply, return {"code": ""}.`.trim();
 
 export { BASE_CONTEXT };
