@@ -76,6 +76,10 @@ Returns `pong` as a quick health check.
 
 See the OpenAPI 3.0 specification in `openapi.yaml`.
 
+## Logging
+
+The `/api/generate` endpoint writes a JSON log entry to `logs/` that includes the user question, the generated response payload, and a timestamp. The log does not include any user-identifying information or client metadata.
+
 ## Swagger UI
 
 Build the static Swagger UI bundle into `docs/api/`:

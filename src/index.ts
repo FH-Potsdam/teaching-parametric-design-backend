@@ -35,7 +35,7 @@ async function handleGenerate(req: Request, res: Response) {
     const responsePayload = { html: html.code, raw: code, functionCalls: html.functions };
 
     try {
-      await logGenerateResponse(responsePayload);
+      await logGenerateResponse(responsePayload, question);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error("Failed to write generate log", error);
