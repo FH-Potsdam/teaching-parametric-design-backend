@@ -3,11 +3,17 @@ import path from "path";
 
 export type MozillaEntry = { name: string; url: string, root: boolean };
 export type P5Entry = { name: string; url: string, root: boolean };
-export type ParametricEntry = { name: string; root: boolean; url: string | Record<string, string> };
+type LocalizedValue<T> = T | Record<string, T>;
+export type ParametricEntry = {
+  name: string;
+  root?: boolean;
+  url: LocalizedValue<string>;
+  thumb?: LocalizedValue<string | null>;
+};
 export type LanguageCode = "en" | "de";
 
 export const DEFAULT_LANGUAGE: LanguageCode = "en";
-export type FunctionLinks = Record<string, { url: string; root: boolean }>;
+export type FunctionLinks = Record<string, { url: string; root: boolean; thumbnail: string | null }>;
 
 /**
  * Build the function link map from bundled JSON sources.
@@ -31,9 +37,11 @@ export function loadFunctionLinks(language: LanguageCode = "en"): FunctionLinks 
     if (!resolved) {
       continue;
     }
-    functionLinks[("root" in entry && entry.root === false) ? "." + entry.name : entry.name] = {
+    const root = ("root" in entry) ? entry.root !== false : true;
+    functionLinks[root ? entry.name : "." + entry.name] = {
       url: joinUrl(parametricBase, resolved),
-      root: ("root" in entry) ? entry.root : true
+      root,
+      thumbnail: resolveParametricThumbnail(entry.thumb, language)
     };
   }
 
@@ -43,7 +51,8 @@ export function loadFunctionLinks(language: LanguageCode = "en"): FunctionLinks 
     }
     functionLinks[entry.name] = {
       url: joinUrl(p5Base, entry.url),
-      root: true
+      root: true,
+      thumbnail: null
     };
   }
 
@@ -54,7 +63,8 @@ export function loadFunctionLinks(language: LanguageCode = "en"): FunctionLinks 
     }
     functionLinks[functionName] = {
       url: joinUrl(mdnBase, entry.url),
-      root: ("root" in entry) ? entry.root : false
+      root: ("root" in entry) ? entry.root : false,
+      thumbnail: null
     };
   }
 
@@ -77,7 +87,7 @@ export function resolveLanguage(value: unknown): LanguageCode {
  * @returns Resolved URL or undefined when missing.
  */
 function resolveParametricUrl(
-  url: string | Record<string, string>,
+  url: LocalizedValue<string>,
   lang: LanguageCode
 ): string | undefined {
   if (typeof url === "string") {
@@ -87,6 +97,37 @@ function resolveParametricUrl(
 }
 
 export { resolveParametricUrl };
+
+/**
+ * Resolve localized thumbnail paths, preserving explicit null values.
+ * @param thumb - Thumbnail path or per-language map.
+ * @param lang - Target language code.
+ * @returns Resolved thumbnail path or null.
+ */
+function resolveParametricThumbnail(
+  thumb: LocalizedValue<string | null> | undefined,
+  lang: LanguageCode
+): string | null {
+  if (typeof thumb === "undefined") {
+    return null;
+  }
+  if (typeof thumb === "string" || thumb === null) {
+    return thumb;
+  }
+  if (Object.prototype.hasOwnProperty.call(thumb, lang)) {
+    return thumb[lang] ?? null;
+  }
+  if (Object.prototype.hasOwnProperty.call(thumb, "en")) {
+    return thumb.en ?? null;
+  }
+  if (Object.prototype.hasOwnProperty.call(thumb, "de")) {
+    return thumb.de ?? null;
+  }
+  const firstValue = Object.values(thumb)[0];
+  return firstValue ?? null;
+}
+
+export { resolveParametricThumbnail };
 
 /**
  * Replace language placeholders in URL templates.

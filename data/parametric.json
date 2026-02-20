@@ -3,393 +3,617 @@
     "name": "log",
     "root": false,
     "url": {
-        "de": "2d/01-intro/#debugging",
-        "en": "2d/01-intro/#debugging"
+      "de": "2d/01-intro/#debugging",
+      "en": "2d/01-intro/#debugging"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_intro_debug.png",
+      "en": "/images/thumbnails/en_2d_intro_debug.png"
     }
   },
   {
     "name": "preload",
     "url": {
-        "de": "2d/01-intro/#sketch",
-        "en": "2d/01-intro/#sketch"
+      "de": "2d/01-intro/#sketch",
+      "en": "2d/01-intro/#sketch"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_intro_sketch.png",
+      "en": "/images/thumbnails/en_2d_intro_sketch.png"
     }
   },
   {
     "name": "setup",
     "url": {
-        "de": "2d/01-intro/#sketch",
-        "en": "2d/01-intro/#sketch"
+      "de": "2d/01-intro/#sketch",
+      "en": "2d/01-intro/#sketch"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_intro_sketch.png",
+      "en": "/images/thumbnails/en_2d_intro_sketch.png"
     }
   },
   {
     "name": "draw",
     "url": {
-        "de": "2d/01-intro/#sketch",
-        "en": "2d/01-intro/#sketch"
+      "de": "2d/01-intro/#sketch",
+      "en": "2d/01-intro/#sketch"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_intro_sketch.png",
+      "en": "/images/thumbnails/en_2d_intro_sketch.png"
     }
   },
   {
     "name": "createCanvas",
     "url": {
-        "de": "2d/02_1-drawing/#zeichenflaeche",
-        "en": "2d/02_1-drawing/#canvas"
+      "de": "2d/02_1-drawing/#zeichenflaeche",
+      "en": "2d/02_1-drawing/#canvas"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_canvas.png",
+      "en": "/images/thumbnails/en_2d_drawing_canvas.png"
     }
   },
   {
     "name": "background",
     "url": {
-        "de": "2d/02_1-drawing/#hintergrund",
-        "en": "2d/02_1-drawing/#background"
+      "de": "2d/02_1-drawing/#hintergrund",
+      "en": "2d/02_1-drawing/#background"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_background.png",
+      "en": "/images/thumbnails/en_2d_drawing_background.png"
     }
   },
   {
     "name": "point",
     "url": {
-        "de": "2d/02_1-drawing/#formen",
-        "en": "2d/02_1-drawing/#shapes"
+      "de": "2d/02_1-drawing/#formen",
+      "en": "2d/02_1-drawing/#shapes"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_shapes.png",
+      "en": "/images/thumbnails/en_2d_drawing_shapes.png"
     }
   },
   {
     "name": "line",
     "url": {
-        "de": "2d/02_1-drawing/#formen",
-        "en": "2d/02_1-drawing/#shapes"
+      "de": "2d/02_1-drawing/#formen",
+      "en": "2d/02_1-drawing/#shapes"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_shapes.png",
+      "en": "/images/thumbnails/en_2d_drawing_shapes.png"
     }
   },
   {
     "name": "ellipse",
     "url": {
-        "de": "2d/02_1-drawing/#formen",
-        "en": "2d/02_1-drawing/#shapes"
+      "de": "2d/02_1-drawing/#formen",
+      "en": "2d/02_1-drawing/#shapes"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_shapes.png",
+      "en": "/images/thumbnails/en_2d_drawing_shapes.png"
     }
   },
   {
     "name": "circle",
     "url": {
-        "de": "2d/02_1-drawing/#circle",
-        "en": ""
+      "de": "2d/02_1-drawing/#circle",
+      "en": ""
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_shapes.png",
+      "en": "/images/thumbnails/en_2d_drawing_shapes.png"
     }
   },
   {
     "name": "rect",
     "url": {
-        "de": "2d/02_1-drawing/#formen",
-        "en": "2d/02_1-drawing/#shapes"
+      "de": "2d/02_1-drawing/#formen",
+      "en": "2d/02_1-drawing/#shapes"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_shapes.png",
+      "en": "/images/thumbnails/en_2d_drawing_shapes.png"
     }
   },
   {
     "name": "square",
     "url": {
-        "de": "2d/02_1-drawing/#formen",
-        "en": "2d/02_1-drawing/#shapes"
+      "de": "2d/02_1-drawing/#formen",
+      "en": "2d/02_1-drawing/#shapes"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_shapes.png",
+      "en": "/images/thumbnails/en_2d_drawing_shapes.png"
     }
   },
   {
     "name": "fill",
     "url": {
-        "de": "2d/02_1-drawing/#fuellungen-and-linien",
-        "en": "2d/02_1-drawing/#fills-and-strokes"
+      "de": "2d/02_1-drawing/#fuellungen-and-linien",
+      "en": "2d/02_1-drawing/#fills-and-strokes"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_fills.png",
+      "en": "/images/thumbnails/en_2d_drawing_fills.png"
     }
   },
   {
     "name": "stroke",
     "url": {
-        "de": "2d/02_1-drawing/#fuellungen-and-linien",
-        "en": "2d/02_1-drawing/#fills-and-strokes"
+      "de": "2d/02_1-drawing/#fuellungen-and-linien",
+      "en": "2d/02_1-drawing/#fills-and-strokes"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_fills.png",
+      "en": "/images/thumbnails/en_2d_drawing_fills.png"
     }
   },
   {
     "name": "strokeWeight",
     "url": {
-        "de": "2d/02_1-drawing/#fuellungen-and-linien",
-        "en": "2d/02_1-drawing/#fills-and-strokes"
+      "de": "2d/02_1-drawing/#fuellungen-and-linien",
+      "en": "2d/02_1-drawing/#fills-and-strokes"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_fills.png",
+      "en": "/images/thumbnails/en_2d_drawing_fills.png"
     }
   },
   {
     "name": "arc",
     "url": {
-        "de": "2d/02_1-drawing/#kreisboegen",
-        "en": "2d/02_1-drawing/#arcs"
+      "de": "2d/02_1-drawing/#kreisboegen",
+      "en": "2d/02_1-drawing/#arcs"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing_arc.png",
+      "en": "/images/thumbnails/en_2d_drawing_arc.png"
     }
   },
   {
     "name": "noLoop",
     "url": {
-        "de": "2d/04-more-drawing/#draw-schleife",
-        "en": "2d/04-more-drawing/#draw-loop"
+      "de": "2d/04-more-drawing/#draw-schleife",
+      "en": "2d/04-more-drawing/#draw-loop"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_drawloop.png",
+      "en": "/images/thumbnails/en_2d_drawing2_drawloop.png"
     }
   },
   {
     "name": "frameRate",
     "url": {
-        "de": "2d/04-more-drawing/#draw-schleife",
-        "en": "2d/04-more-drawing/#draw-loop"
+      "de": "2d/04-more-drawing/#draw-schleife",
+      "en": "2d/04-more-drawing/#draw-loop"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_drawloop.png",
+      "en": "/images/thumbnails/en_2d_drawing2_drawloop.png"
     }
   },
   {
     "name": "beginShape",
     "url": {
-        "de": "2d/04-more-drawing/#polygons",
-        "en": "2d/04-more-drawing/#polygons"
+      "de": "2d/04-more-drawing/#polygons",
+      "en": "2d/04-more-drawing/#polygons"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_vertex.png",
+      "en": "/images/thumbnails/en_2d_drawing2_vertex.png"
     }
   },
   {
     "name": "vertex",
     "url": {
-        "de": "2d/04-more-drawing/#polygons",
-        "en": "2d/04-more-drawing/#polygons"
+      "de": "2d/04-more-drawing/#polygons",
+      "en": "2d/04-more-drawing/#polygons"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_vertex.png",
+      "en": "/images/thumbnails/en_2d_drawing2_vertex.png"
     }
   },
   {
     "name": "endShape",
     "url": {
-        "de": "2d/04-more-drawing/#polygons",
-        "en": "2d/04-more-drawing/#polygons"
+      "de": "2d/04-more-drawing/#polygons",
+      "en": "2d/04-more-drawing/#polygons"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_vertex.png",
+      "en": "/images/thumbnails/en_2d_drawing2_vertex.png"
     }
   },
   {
     "name": "quad",
     "url": {
-        "de": "2d/04-more-drawing/#quad-and-triangle",
-        "en": "2d/04-more-drawing/#quad-and-triangle"
+      "de": "2d/04-more-drawing/#quad-and-triangle",
+      "en": "2d/04-more-drawing/#quad-and-triangle"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_curves.png",
+      "en": "/images/thumbnails/en_2d_drawing2_drawloop.png"
     }
   },
   {
     "name": "triangle",
     "url": {
-        "de": "2d/04-more-drawing/#quad-and-triangle",
-        "en": "2d/04-more-drawing/#quad-and-triangle"
+      "de": "2d/04-more-drawing/#quad-and-triangle",
+      "en": "2d/04-more-drawing/#quad-and-triangle"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_curves.png",
+      "en": "/images/thumbnails/en_2d_drawing2_drawloop.png"
     }
   },
   {
     "name": "curveVertex",
     "url": {
-        "de": "2d/04-more-drawing/#kurven",
-        "en": "2d/04-more-drawing/#curves"
+      "de": "2d/04-more-drawing/#kurven",
+      "en": "2d/04-more-drawing/#curves"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_curves.png",
+      "en": "/images/thumbnails/en_2d_drawing2_curves.png"
     }
   },
   {
     "name": "quadraticVertex",
     "url": {
-        "de": "2d/04-more-drawing/#kurven",
-        "en": "2d/04-more-drawing/#curves"
+      "de": "2d/04-more-drawing/#kurven",
+      "en": "2d/04-more-drawing/#curves"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_curves.png",
+      "en": "/images/thumbnails/en_2d_drawing2_curves.png"
     }
   },
   {
     "name": "bezierVertex",
     "url": {
-        "de": "2d/04-more-drawing/#kurven",
-        "en": "2d/04-more-drawing/#curves"
+      "de": "2d/04-more-drawing/#kurven",
+      "en": "2d/04-more-drawing/#curves"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_drawing2_curves.png",
+      "en": "/images/thumbnails/en_2d_drawing2_curves.png"
     }
   },
   {
     "name": "random",
     "url": {
-        "de": "2d/03_1-variables/#zufall",
-        "en": "2d/03_1-variables/#random"
+      "de": "2d/03_1-variables/#zufall",
+      "en": "2d/03_1-variables/#random"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_variables_random.png",
+      "en": "/images/thumbnails/en_2d_variables_random.png"
     }
   },
   {
     "name": "color",
     "url": {
-        "de": "2d/03_1-variables/#farben-and-variablen",
-        "en": "2d/03_1-variables/#colors-and-variables"
+      "de": "2d/03_1-variables/#farben-and-variablen",
+      "en": "2d/03_1-variables/#colors-and-variables"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_variables_variables.png",
+      "en": "/images/thumbnails/en_2d_variables_variables.png"
     }
   },
   {
     "name": "noise",
     "url": {
-        "de": "2d/05_1-variables/#noise",
-        "en": "2d/05_1-variables/#noise"
+      "de": "2d/05_1-variables/#noise",
+      "en": "2d/05_1-variables/#noise"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_variables_noise.png",
+      "en": "/images/thumbnails/en_2d_variables_noise.png"
     }
   },
   {
     "name": "noiseSeed",
     "url": {
-        "de": "2d/05_1-variables/#noise",
-        "en": "2d/05_1-variables/#noise"
+      "de": "2d/05_1-variables/#noise",
+      "en": "2d/05_1-variables/#noise"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_variables_noise.png",
+      "en": "/images/thumbnails/en_2d_variables_noise.png"
     }
   },
   {
     "name": "createInput",
     "url": {
-        "de": "2d/06-inputs/#formulare",
-        "en": "2d/06-inputs/#form-input"
+      "de": "2d/06-inputs/#formulare",
+      "en": "2d/06-inputs/#form-input"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_input_slider.png",
+      "en": "/images/thumbnails/en_2d_input_slider.png"
     }
   },
   {
     "name": "createSlider",
     "url": {
-        "de": "2d/06-inputs/#slider",
-        "en": "2d/06-inputs/#slider"
+      "de": "2d/06-inputs/#slider",
+      "en": "2d/06-inputs/#slider"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_input_slider.png",
+      "en": "/images/thumbnails/en_2d_input_slider.png"
     }
   },
   {
     "name": "text",
     "url": {
-        "de": "2d/02_3-typography/#text",
-        "en": "2d/02_3-typography/#text"
+      "de": "2d/02_3-typography/#text",
+      "en": "2d/02_3-typography/#text"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_typography_intro.png",
+      "en": "/images/thumbnails/de_2d_typography_intro.png"
     }
   },
   {
     "name": "textAlign",
     "url": {
-        "de": "2d/02_3-typography/#text",
-        "en": "2d/02_3-typography/#text"
+      "de": "2d/02_3-typography/#text",
+      "en": "2d/02_3-typography/#text"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_typography_intro.png",
+      "en": "/images/thumbnails/de_2d_typography_intro.png"
     }
   },
   {
     "name": "textSize",
     "url": {
-        "de": "2d/02_3-typography/#text",
-        "en": "2d/02_3-typography/#text"
+      "de": "2d/02_3-typography/#text",
+      "en": "2d/02_3-typography/#text"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_typography_intro.png",
+      "en": "/images/thumbnails/de_2d_typography_intro.png"
     }
   },
   {
     "name": "textLeading",
     "url": {
-        "de": "2d/02_3-typography/#text",
-        "en": "2d/02_3-typography/#text"
+      "de": "2d/02_3-typography/#text",
+      "en": "2d/02_3-typography/#text"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_typography_intro.png",
+      "en": "/images/thumbnails/de_2d_typography_intro.png"
     }
   },
   {
     "name": "textStyle",
     "url": {
-        "de": "2d/02_3-typography/#text",
-        "en": "2d/02_3-typography/#text"
+      "de": "2d/02_3-typography/#text",
+      "en": "2d/02_3-typography/#text"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_typography_intro.png",
+      "en": "/images/thumbnails/de_2d_typography_intro.png"
     }
   },
   {
     "name": "textFont",
     "url": {
-        "de": "2d/02_3-typography/#schriften-laden",
-        "en": "2d/02_3-typography/#loading-fonts"
+      "de": "2d/02_3-typography/#schriften-laden",
+      "en": "2d/02_3-typography/#loading-fonts"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_typography_fonts.png",
+      "en": "/images/thumbnails/de_2d_typography_intro.png"
     }
   },
   {
     "name": "loadFont",
     "url": {
-        "de": "2d/02_3-typography/#schriften-laden",
-        "en": "2d/02_3-typography/#loading-fonts"
+      "de": "2d/02_3-typography/#schriften-laden",
+      "en": "2d/02_3-typography/#loading-fonts"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_typography_fonts.png",
+      "en": "/images/thumbnails/de_2d_typography_fonts.png"
     }
   },
   {
     "name": "textWidth",
     "url": {
-        "de": "2d/02_3-typography/#textbreite",
-        "en": "2d/02_3-typography/#text-width"
+      "de": "2d/02_3-typography/#textbreite",
+      "en": "2d/02_3-typography/#text-width"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_typography_intro.png",
+      "en": "/images/thumbnails/de_2d_typography_intro.png"
     }
   },
   {
     "name": "translate",
     "url": {
-        "de": "2d/05_2-transformations/#verschieben",
-        "en": "2d/05_2-transformations/#translate"
+      "de": "2d/05_2-transformations/#verschieben",
+      "en": "2d/05_2-transformations/#translate"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_transformations_translate.png",
+      "en": "/images/thumbnails/en_2d_transformations_translate.png"
     }
   },
   {
     "name": "push",
     "url": {
-        "de": "2d/05_2-transformations/#mehrere-transformationen",
-        "en": "2d/05_2-transformations/#multiple-transforms"
+      "de": "2d/05_2-transformations/#mehrere-transformationen",
+      "en": "2d/05_2-transformations/#multiple-transforms"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_transformations_translate.png",
+      "en": "/images/thumbnails/en_2d_transformations_translate.png"
     }
   },
   {
     "name": "pop",
     "url": {
-        "de": "2d/05_2-transformations/#mehrere-transformationen",
-        "en": "2d/05_2-transformations/#multiple-transforms"
+      "de": "2d/05_2-transformations/#mehrere-transformationen",
+      "en": "2d/05_2-transformations/#multiple-transforms"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_transformations_translate.png",
+      "en": "/images/thumbnails/en_2d_transformations_translate.png"
     }
   },
   {
     "name": "rotate",
     "url": {
-        "de": "2d/05_2-transformations/#drehen",
-        "en": "2d/05_2-transformations/#rotation"
+      "de": "2d/05_2-transformations/#drehen",
+      "en": "2d/05_2-transformations/#rotation"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_transformations_rotate.png",
+      "en": "/images/thumbnails/en_2d_transformations_rotate.png"
     }
   },
   {
     "name": "scale",
     "url": {
-        "de": "2d/05_2-transformations/#skalieren",
-        "en": "2d/05_2-transformations/#scale"
+      "de": "2d/05_2-transformations/#skalieren",
+      "en": "2d/05_2-transformations/#scale"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_transformations_scale.png",
+      "en": "/images/thumbnails/en_2d_transformations_scale.png"
     }
   },
   {
     "name": "mouseClicked",
     "url": {
-        "de": "2d/06-inputs/#maus",
-        "en": "2d/06-inputs/#mouse"
+      "de": "2d/06-inputs/#maus",
+      "en": "2d/06-inputs/#mouse"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_input_mouse.png",
+      "en": "/images/thumbnails/en_2d_input_mouse.png"
     }
   },
   {
     "name": "keyPressed",
     "url": {
-        "de": "2d/06-inputs/#tastatur",
-        "en": "2d/06-inputs/#keyboard"
+      "de": "2d/06-inputs/#tastatur",
+      "en": "2d/06-inputs/#keyboard"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_input_keyboard.png",
+      "en": "/images/thumbnails/en_2d_input_keyboard.png"
     }
   },
   {
     "name": "for",
     "url": {
-        "de": "2d/03_2-loops/#for-schleife",
-        "en": "2d/03_2-loops/#for-loop"
+      "de": "2d/03_2-loops/#for-schleife",
+      "en": "2d/03_2-loops/#for-loop"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_loops_for.png",
+      "en": "/images/thumbnails/en_2d_loops_for.png"
     }
   },
   {
     "name": "while",
     "url": {
-        "de": "2d/03_2-loops/#while-schleife",
-        "en": "2d/03_2-loops/#while-loop"
+      "de": "2d/03_2-loops/#while-schleife",
+      "en": "2d/03_2-loops/#while-loop"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_loops_while.png",
+      "en": "/images/thumbnails/en_2d_loops_while.png"
     }
   },
   {
     "name": "if",
     "url": {
-        "de": "2d/03_3-conditions/#vergleichen",
-        "en": "2d/03_3-conditions/#comparisons"
+      "de": "2d/03_3-conditions/#vergleichen",
+      "en": "2d/03_3-conditions/#comparisons"
+    },
+    "thumb": {
+      "de": "/images/thumbnails/de_2d_conditions_conditions.png",
+      "en": "/images/thumbnails/en_2d_conditions_conditions.png"
     }
   },
   {
     "name": "loadImage",
     "url": {
-        "de": "bonus/images/",
-        "en": "bonus/images/"
+      "de": "bonus/images/",
+      "en": "bonus/images/"
+    },
+    "thumb": {
+      "de": null,
+      "en": null
     }
   },
   {
     "name": "image",
     "url": {
-        "de": "bonus/images/",
-        "en": "bonus/images/"
+      "de": "bonus/images/",
+      "en": "bonus/images/"
+    },
+    "thumb": {
+      "de": null,
+      "en": null
     }
   },
   {
     "name": "loadPixels",
     "url": {
-        "de": "bonus/images/",
-        "en": "bonus/images/"
+      "de": "bonus/images/",
+      "en": "bonus/images/"
+    },
+    "thumb": {
+      "de": null,
+      "en": null
     }
   },
   {
     "name": "updatePixels",
     "url": {
-        "de": "bonus/images/",
-        "en": "bonus/images/"
+      "de": "bonus/images/",
+      "en": "bonus/images/"
+    },
+    "thumb": {
+      "de": null,
+      "en": null
     }
   },
   {
     "name": "resizeCanvas",
     "url": {
-        "de": "bonus/canvas/",
-        "en": "bonus/canvas/"
+      "de": "bonus/canvas/",
+      "en": "bonus/canvas/"
+    },
+    "thumb": {
+      "de": null,
+      "en": null
     }
   },
   {
     "name": "loadSound",
     "url": {
-        "de": "bonus/sound/",
-        "en": "bonus/sound/"
+      "de": "bonus/sound/",
+      "en": "bonus/sound/"
+    },
+    "thumb": {
+      "de": null,
+      "en": null
     }
   }
 ]

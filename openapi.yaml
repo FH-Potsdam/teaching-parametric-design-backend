@@ -162,12 +162,17 @@ components:
       required:
         - name
         - url
+        - thumbnail
       properties:
         name:
           type: string
         url:
           type: string
           format: uri
+        thumbnail:
+          type: string
+          nullable: true
+          description: Localized thumbnail path for parametric links, otherwise null.
     ErrorResponse:
       type: object
       additionalProperties: false

@@ -24,7 +24,7 @@ describe("logGenerateResponse", () => {
     const payload = {
       html: "<pre>hi</pre>",
       raw: "console.log(1);",
-      functionCalls: [{ name: "setup", url: "https://example.com" }]
+      functionCalls: [{ name: "setup", url: "https://example.com", thumbnail: null }]
     };
     const question = "Draw a circle.";
 

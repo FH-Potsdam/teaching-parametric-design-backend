@@ -46,7 +46,16 @@ Response body:
   "html": "<pre><code class=\"hljs language-javascript\">…</code></pre>",
   "raw": "const sketch = ...",
   "functionCalls": [
-    { "name": "createCanvas", "url": "https://developer.mozilla.org/..." }
+    {
+      "name": "createCanvas",
+      "url": "https://parametric-design.fh-potsdam.de/en/2d/02_1-drawing/#canvas",
+      "thumbnail": "/images/thumbnails/en_2d_drawing_canvas.png"
+    },
+    {
+      "name": "max",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max",
+      "thumbnail": null
+    }
   ]
 }
 ```

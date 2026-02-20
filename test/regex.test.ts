@@ -39,9 +39,9 @@ describe("linkifyLetConst", () => {
 describe("linkifyFunctionCalls", () => {
   it("links function_ spans and skips function definitions", () => {
     const output = linkifyFunctionCalls(highlightJSCode, [], [
-      { name: "createCanvas", url: "https://demo.com/createCanvas", root: true },
-      { name: "background", url: "https://demo.com/background", root: true },
-      { name: ".push", url: "https://demo.com/push", root: false }
+      { name: "createCanvas", url: "https://demo.com/createCanvas", root: true, thumbnail: "/images/thumbnails/createCanvas.png" },
+      { name: "background", url: "https://demo.com/background", root: true, thumbnail: null },
+      { name: ".push", url: "https://demo.com/push", root: false, thumbnail: null }
     ]);
 
     expect(output.code).toContain(
@@ -55,6 +55,13 @@ describe("linkifyFunctionCalls", () => {
     );
     expect(output.code).toContain(
       '<span class="hljs-keyword">function</span> <span class="hljs-title function_">newFunction</span>'
+    );
+    expect(output.functions).toEqual(
+      expect.arrayContaining([
+        { name: "createCanvas", url: "https://demo.com/createCanvas", thumbnail: "/images/thumbnails/createCanvas.png" },
+        { name: "background", url: "https://demo.com/background", thumbnail: null },
+        { name: "push", url: "https://demo.com/push", thumbnail: null }
+      ])
     );
   });
 });
@@ -80,8 +87,8 @@ describe("linkifyControlKeywords", () => {
   it("links for/while/if keyword spans with matching function links", () => {
     const input = highlightJSCode;
     const output = linkifyControlKeywords(input, [
-      { name: "for", url: "https://demo.com/for", root: true },
-      { name: "if", url: "https://demo.com/if", root: true }
+      { name: "for", url: "https://demo.com/for", root: true, thumbnail: null },
+      { name: "if", url: "https://demo.com/if", root: true, thumbnail: null }
     ]);
 
     expect(output).toContain(
@@ -95,9 +102,9 @@ describe("linkifySpecialKeywords", () => {
   it("links configured keywords with matching root links", () => {
     const input = `let x = mouseX; const y = mouseY; if (keyIsPressed) { console.log("hello"); }`;
     const output = linkifySpecialKeywords(input, [
-      { name: "mouseX", url: "https://demo.com/mouseX", root: true },
-      { name: "mouseY", url: "https://demo.com/mouseY", root: true },
-      { name: "keyIsPressed", url: "https://demo.com/keyIsPressed", root: true }
+      { name: "mouseX", url: "https://demo.com/mouseX", root: true, thumbnail: null },
+      { name: "mouseY", url: "https://demo.com/mouseY", root: true, thumbnail: null },
+      { name: "keyIsPressed", url: "https://demo.com/keyIsPressed", root: true, thumbnail: null }
     ]);
 
     expect(output).toContain(

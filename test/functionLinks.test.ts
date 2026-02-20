@@ -8,23 +8,28 @@ describe("loadFunctionLinks", () => {
 
     expect(links.eval).toEqual({
       url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
-      root: true
+      root: true,
+      thumbnail: null
     });
     expect(links[".log"]).toEqual({
       url: "https://parametric-design.fh-potsdam.de/en/2d/01-intro/#debugging",
-      root: false
+      root: false,
+      thumbnail: "/images/thumbnails/en_2d_intro_debug.png"
     });
     expect(links.draw).toEqual({
       url: "https://parametric-design.fh-potsdam.de/en/2d/01-intro/#sketch",
-      root: true
+      root: true,
+      thumbnail: "/images/thumbnails/en_2d_intro_sketch.png"
     });
     expect(links.arc).toEqual({
       url: "https://parametric-design.fh-potsdam.de/en/2d/02_1-drawing/#arcs",
-      root: true
+      root: true,
+      thumbnail: "/images/thumbnails/en_2d_drawing_arc.png"
     });
     expect(links[".push"]).toEqual({
       url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push",
-      root: false
+      root: false,
+      thumbnail: null
     });
   });
 
@@ -33,15 +38,18 @@ describe("loadFunctionLinks", () => {
 
     expect(links.eval).toEqual({
       url: "https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/eval",
-      root: true
+      root: true,
+      thumbnail: null
     });
     expect(links[".log"]).toEqual({
       url: "https://parametric-design.fh-potsdam.de/de/2d/01-intro/#debugging",
-      root: false
+      root: false,
+      thumbnail: "/images/thumbnails/de_2d_intro_debug.png"
     });
     expect(links.draw).toEqual({
       url: "https://parametric-design.fh-potsdam.de/de/2d/01-intro/#sketch",
-      root: true
+      root: true,
+      thumbnail: "/images/thumbnails/de_2d_intro_sketch.png"
     });
   });
 });

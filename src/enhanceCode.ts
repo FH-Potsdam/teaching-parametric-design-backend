@@ -8,7 +8,7 @@ import {
 } from "./regex";
 import type {FunctionLinks, LanguageCode} from "./functionLinks";
 
-export type MappedFunctionLink = { name: string; url: string; root: boolean; };
+export type MappedFunctionLink = { name: string; url: string; root: boolean; thumbnail: string | null; };
 
 import type {FunctionArray} from "./regex";
 
@@ -44,7 +44,7 @@ export function enhanceCode(
  */
 function mapFunctionLinks(functionLinks: FunctionLinks): MappedFunctionLink[] {
   return Object.entries(functionLinks).map(([fullName, data]) => {
-    return { name: fullName, url: data.url, root: data.root };
+    return { name: fullName, url: data.url, root: data.root, thumbnail: data.thumbnail };
   });
 }
 

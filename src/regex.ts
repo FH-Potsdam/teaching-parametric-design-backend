@@ -116,8 +116,8 @@ function linkifyArrays(code: string, language: LanguageCode = "en"): string {
 }
 
 export { linkifyArrays };
-export type FunctionList = {[id: string]: {name: string, url: string}};
-export type FunctionArray = {name: string, url: string}[];
+export type FunctionList = {[id: string]: {name: string, url: string, thumbnail: string | null}};
+export type FunctionArray = {name: string, url: string, thumbnail: string | null}[];
 
 /**
  * Linkify function call names and build the list of linked functions.
@@ -129,18 +129,18 @@ export type FunctionArray = {name: string, url: string}[];
 function linkifyFunctionCalls(
   code: string,
   ignoredNames: string[],
-  functionLinks: Array<{ name: string; url: string; root: boolean }>
+  functionLinks: Array<{ name: string; url: string; root: boolean; thumbnail: string | null }>
 ): {code: string, functions: FunctionArray} {
   const functionList: FunctionList = {};
   const regex = /<span class="hljs-title function_">([A-Za-z_$][A-Za-z0-9_$]*)<\/span>/g;
   const ignored = new Set(ignoredNames);
-  const rootLinkMap = new Map<string, string>();
-  const nonRootLinkMap = new Map<string, string>();
+  const rootLinkMap = new Map<string, { url: string; thumbnail: string | null }>();
+  const nonRootLinkMap = new Map<string, { url: string; thumbnail: string | null }>();
   functionLinks.forEach((entry) => {
     if (entry.root) {
-      rootLinkMap.set(entry.name, entry.url);
+      rootLinkMap.set(entry.name, { url: entry.url, thumbnail: entry.thumbnail });
     } else {
-      nonRootLinkMap.set(entry.name, entry.url);
+      nonRootLinkMap.set(entry.name, { url: entry.url, thumbnail: entry.thumbnail });
     }
   });
   const linkifiedCode = code.replace(regex, (match, callee, offset, source) => {
@@ -152,11 +152,13 @@ function linkifyFunctionCalls(
     }
     const hasLeadingDot = offset > 0 && source[offset - 1] === ".";
     const dataRoot = hasLeadingDot ? "false" : "true";
-    const url = (hasLeadingDot ? nonRootLinkMap.get("." + callee) : rootLinkMap.get(callee)) ?? "#";
+    const linkData = hasLeadingDot ? nonRootLinkMap.get("." + callee) : rootLinkMap.get(callee);
+    const url = linkData?.url ?? "#";
     if (url !== "#" && !(callee in functionList)) {
       functionList[callee] = {
         name: callee,
-        url
+        url,
+        thumbnail: linkData?.thumbnail ?? null
       };
     }
     return `<span class="hljs-title function_"><a href="${url}" data-func="${callee}" data-root="${dataRoot}" target="_blank" rel="noopener noreferrer">${callee}</a></span>`;
@@ -180,7 +182,7 @@ export { linkifyFunctionCalls };
  */
 function linkifyControlKeywords(
   code: string,
-  functionLinks: Array<{ name: string; url: string; root: boolean }>
+  functionLinks: Array<{ name: string; url: string; root: boolean; thumbnail: string | null }>
 ): string {
   const keywordRegex = /<span class="hljs-keyword">(for|while|if)<\/span>/g;
   const keywordLinkMap = new Map<string, string>();
@@ -208,7 +210,7 @@ export { linkifyControlKeywords };
  */
 function linkifySpecialKeywords(
   code: string,
-  functionLinks: Array<{ name: string; url: string; root: boolean }>
+  functionLinks: Array<{ name: string; url: string; root: boolean; thumbnail: string | null }>
 ): string {
   const keywordLinkMap = new Map<string, string>();
   functionLinks.forEach((entry) => {
