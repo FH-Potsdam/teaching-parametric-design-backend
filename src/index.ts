@@ -12,6 +12,9 @@ const allowedOrigins = new Set([
   "https://parametric-design.fh-potsdam.de",
   "http://parametric-design.fh-potsdam.de",
 ]);
+const allowLocalhostCors = ["1", "true", "yes", "on"].includes(
+  (process.env.ALLOW_LOCALHOST_CORS || "").toLowerCase(),
+);
 
 function isLocalTestOrigin(origin: string): boolean {
   try {
@@ -26,7 +29,7 @@ function isLocalTestOrigin(origin: string): boolean {
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  if (origin && (allowedOrigins.has(origin) || isLocalTestOrigin(origin))) {
+  if (origin && (allowedOrigins.has(origin) || (allowLocalhostCors && isLocalTestOrigin(origin)))) {
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Vary", "Origin");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
