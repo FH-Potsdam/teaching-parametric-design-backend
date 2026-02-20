@@ -48,13 +48,21 @@ app.use("/docs", express.static(path.join(process.cwd(), "docs-api")));
 
 const PORT = process.env.PORT || 3000;
 
+type GenerateRequestBody = {
+  question?: unknown;
+  code?: unknown;
+  language?: unknown;
+};
+
 /**
  * Handle code-generation requests and return highlighted HTML plus link data.
- * @param req - Express request with question/language payload.
+ * Accepts a required `question`, optional existing `code` context, and optional `language`.
+ * When `code` is provided, it is forwarded as context to OpenRouter.
+ * @param req - Express request with generate payload in body.
  * @param res - Express response used to send JSON.
  * @returns Promise resolving to an Express response.
  */
-async function handleGenerate(req: Request, res: Response) {
+async function handleGenerate(req: Request<Record<string, never>, unknown, GenerateRequestBody>, res: Response) {
   const question: unknown = req.body?.question;
   const inputCode: unknown = req.body?.code;
   const language = resolveLanguage(req.body?.language);
