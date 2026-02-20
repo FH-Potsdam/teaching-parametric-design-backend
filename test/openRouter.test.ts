@@ -44,4 +44,24 @@ describe("requestOpenRouterCode", () => {
 
     expect(code).toBe("const x = 1;");
   });
+
+  it("adds current code context when code is provided", async () => {
+    sendMock.mockResolvedValue({
+      choices: [{ message: { content: '{"code":"console.log(2);"}' } }]
+    });
+
+    const { requestOpenRouterCode } = await import("../src/openRouter");
+    await requestOpenRouterCode("change this", "function draw() { background(0); }");
+
+    expect(sendMock).toHaveBeenCalledTimes(1);
+    const requestPayload = sendMock.mock.calls[0]?.[0];
+    expect(requestPayload.messages).toHaveLength(3);
+    expect(requestPayload.messages[2]).toMatchObject({
+      role: "user"
+    });
+    expect(requestPayload.messages[2].content).toContain(
+      "The question is about the attached current code.",
+    );
+    expect(requestPayload.messages[2].content).toContain("function draw() { background(0); }");
+  });
 });

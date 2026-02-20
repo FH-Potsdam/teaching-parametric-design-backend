@@ -86,17 +86,32 @@ export { p5SketchSchema };
 /**
  * Request a p5.js sketch from OpenRouter and return the raw JavaScript code.
  * @param question - User prompt describing the sketch.
+ * @param currentCode - Existing code related to the user question.
  * @returns Raw JavaScript code from the model response.
  */
-export async function requestOpenRouterCode(question: string): Promise<string> {
+export async function requestOpenRouterCode(
+  question: string,
+  currentCode?: string,
+): Promise<string> {
   const openRouter = await getOpenRouter();
+  const messages: Array<{ role: "system" | "user"; content: string }> = [
+    { role: "system", content: BASE_CONTEXT },
+    { role: "user", content: question }
+  ];
+
+  if (typeof currentCode === "string" && currentCode.trim()) {
+    messages.push({
+      role: "user",
+      content:
+        "The question is about the attached current code. Use this code as context when responding.\n\nCurrent code:\n" +
+        currentCode
+    });
+  }
+
   const response = await openRouter.chat.send({
     model: OPENROUTER_MODEL,
     temperature: 0,
-    messages: [
-      { role: "system", content: BASE_CONTEXT },
-      { role: "user", content: question }
-    ],
+    messages,
     responseFormat: {
       type: "json_schema",
       jsonSchema: p5SketchSchema

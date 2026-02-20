@@ -56,6 +56,7 @@ const PORT = process.env.PORT || 3000;
  */
 async function handleGenerate(req: Request, res: Response) {
   const question: unknown = req.body?.question;
+  const inputCode: unknown = req.body?.code;
   const language = resolveLanguage(req.body?.language);
 
   if (typeof question !== "string" || !question.trim()) {
@@ -63,7 +64,9 @@ async function handleGenerate(req: Request, res: Response) {
   }
 
   try {
-    const code = await requestOpenRouterCode(question);
+    const currentCode =
+      typeof inputCode === "string" ? inputCode.trim() : undefined;
+    const code = await requestOpenRouterCode(question, currentCode);
     const functionLinks = loadFunctionLinks(language);
     const html = enhanceCode(code, functionLinks, language);
     const responsePayload = { html: html.code, raw: code, functionCalls: html.functions };
