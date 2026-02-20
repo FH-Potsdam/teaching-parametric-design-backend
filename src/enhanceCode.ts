@@ -34,7 +34,10 @@ export function enhanceCode(
   highlighted = linkifyControlKeywords(highlighted, mappedFunctionLinks);
   highlighted = linkifySpecialKeywords(highlighted, mappedFunctionLinks);
   const linkifiedFunctions = linkifyFunctionCalls(highlighted, [], mappedFunctionLinks);
-  return linkifiedFunctions;
+  return {
+    code: linkifiedFunctions.code,
+    functions: collectLinkedFunctions(linkifiedFunctions.code, mappedFunctionLinks)
+  };
 }
 
 /**
@@ -49,6 +52,56 @@ function mapFunctionLinks(functionLinks: FunctionLinks): MappedFunctionLink[] {
 }
 
 export { mapFunctionLinks };
+
+/**
+ * Collect linked entries from all `data-func` anchors in highlighted output.
+ * @param code - Linkified highlighted HTML source.
+ * @param functionLinks - Normalized function links.
+ * @returns Deduplicated linked functions with thumbnail metadata.
+ */
+function collectLinkedFunctions(
+  code: string,
+  functionLinks: MappedFunctionLink[]
+): FunctionArray {
+  const functionListByName = new Map<string, {name: string; url: string; thumbnail: string | null;}>();
+  const thumbnailMap = new Map<string, string | null>();
+  functionLinks.forEach((entry) => {
+    thumbnailMap.set(entry.name, entry.thumbnail);
+  });
+
+  const anchorRegex = /<a\b[^>]*>/g;
+  let anchorMatch: RegExpExecArray | null = anchorRegex.exec(code);
+  while (anchorMatch) {
+    const anchorTag = anchorMatch[0];
+    const name = anchorTag.match(/\sdata-func="([^"]+)"/)?.[1];
+    const url = anchorTag.match(/\shref="([^"]+)"/)?.[1];
+    const root = anchorTag.match(/\sdata-root="([^"]+)"/)?.[1];
+
+    if (!name || !url || url === "#") {
+      anchorMatch = anchorRegex.exec(code);
+      continue;
+    }
+
+    let thumbnail: string | null = null;
+    if (root === "false") {
+      thumbnail = thumbnailMap.get(`.${name}`) ?? null;
+    } else if (root === "true") {
+      thumbnail = thumbnailMap.get(name) ?? null;
+    } else {
+      thumbnail = thumbnailMap.get(name) ?? thumbnailMap.get(`.${name}`) ?? null;
+    }
+
+    if (!functionListByName.has(name)) {
+      functionListByName.set(name, { name, url, thumbnail });
+    }
+
+    anchorMatch = anchorRegex.exec(code);
+  }
+
+  return Array.from(functionListByName.values());
+}
+
+export { collectLinkedFunctions };
 
 /**
  * Check whether the model output looks like pure JavaScript without wrappers.

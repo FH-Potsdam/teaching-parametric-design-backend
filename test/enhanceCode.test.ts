@@ -38,5 +38,56 @@ describe("enhanceCode", () => {
       expect(link.getAttribute("target")).toBe("_blank");
       expect(link.getAttribute("rel")).toBe("noopener noreferrer");
     });
+
+    expect(html.functions).toEqual(
+      expect.arrayContaining([
+        {
+          name: "for",
+          url: "https://parametric-design.fh-potsdam.de/en/2d/03_2-loops/#for-loop",
+          thumbnail: "/images/thumbnails/en_2d_loops_for.png"
+        },
+        {
+          name: "let",
+          url: "https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/",
+          thumbnail: null
+        },
+        {
+          name: "const",
+          url: "https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/",
+          thumbnail: null
+        },
+        {
+          name: "Array-Bracket",
+          url: "https://parametric-design.fh-potsdam.de/en/2d/05_1-variables/#arrays",
+          thumbnail: null
+        }
+      ])
+    );
+  });
+
+  it("returns links for special runtime keywords in functionCalls", () => {
+    const functionLinks = loadFunctionLinks("en");
+    const code = "function draw() { const x = mouseX; if (keyIsPressed) { circle(mouseX, mouseY, 10); } }";
+    const html = enhanceCode(code, functionLinks);
+
+    expect(html.functions).toEqual(
+      expect.arrayContaining([
+        {
+          name: "mouseX",
+          url: "https://p5js.org/reference/p5/mouseX/",
+          thumbnail: null
+        },
+        {
+          name: "mouseY",
+          url: "https://p5js.org/reference/p5/mouseY/",
+          thumbnail: null
+        },
+        {
+          name: "keyIsPressed",
+          url: "https://p5js.org/reference/p5/keyIsPressed/",
+          thumbnail: null
+        }
+      ])
+    );
   });
 });

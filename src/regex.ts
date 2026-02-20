@@ -28,7 +28,7 @@ function linkifyLetConst(code: string, language: LanguageCode = "en"): string {
   const regex = /<span class="hljs-keyword">(let|const)<\/span>/g;
   return code.replace(regex, (match, keyword) => {
     const url = KEYWORD_LINKS[keyword];
-    return `<span class="hljs-keyword"><a href="${applyLanguagePlaceholders(url, language)}" target="_blank" rel="noopener noreferrer">${keyword}</a></span>`;
+    return `<span class="hljs-keyword"><a href="${applyLanguagePlaceholders(url, language)}" data-func="${keyword}" data-root="true" target="_blank" rel="noopener noreferrer">${keyword}</a></span>`;
   });
 }
 
@@ -92,7 +92,7 @@ function linkifyArrays(code: string, language: LanguageCode = "en"): string {
         depth -= 1;
         arrayBuffer += "]";
         if (depth === 0) {
-          output += `<a href="${applyLanguagePlaceholders(ARRAY_LINK, language)}" data-func="Array-Bracket" target="_blank" rel="noopener noreferrer">${arrayBuffer}</a>`;
+          output += `<a href="${applyLanguagePlaceholders(ARRAY_LINK, language)}" data-func="Array-Bracket" data-root="true" target="_blank" rel="noopener noreferrer">${arrayBuffer}</a>`;
           arrayBuffer = "";
         }
       } else {

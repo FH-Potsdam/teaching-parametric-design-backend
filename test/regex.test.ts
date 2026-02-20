@@ -21,17 +21,17 @@ describe("linkifyLetConst", () => {
     const input = highlightJSCode;
     const output = linkifyLetConst(input);
 
-    const countConst = countOccurrences(output, '<a href="https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/" target="_blank" rel="noopener noreferrer">const</a>');
+    const countConst = countOccurrences(output, '<a href="https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/" data-func="const" data-root="true" target="_blank" rel="noopener noreferrer">const</a>');
     expect(countConst).toBe(10);
-    const countLet = countOccurrences(output, '<a href="https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/" target="_blank" rel="noopener noreferrer">let</a>');
+    const countLet = countOccurrences(output, '<a href="https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/" data-func="let" data-root="true" target="_blank" rel="noopener noreferrer">let</a>');
     expect(countLet).toBe(3);
 
     expect(output).toContain(
-      '<a href="https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/" target="_blank" rel="noopener noreferrer">let</a>'
+      '<a href="https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/" data-func="let" data-root="true" target="_blank" rel="noopener noreferrer">let</a>'
     );
 
     expect(output).toContain(
-      '<a href="https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/" target="_blank" rel="noopener noreferrer">const</a>'
+      '<a href="https://parametric-design.fh-potsdam.de/en/2d/03_1-variables/" data-func="const" data-root="true" target="_blank" rel="noopener noreferrer">const</a>'
     );
   });
 });
@@ -72,13 +72,13 @@ describe("linkifyArrays", () => {
     const output = linkifyArrays(input);
 
     expect(output).toContain(
-      '<a href="https://parametric-design.fh-potsdam.de/en/2d/05_1-variables/#arrays" data-func="Array-Bracket" target="_blank" rel="noopener noreferrer">[]</a>'
+      '<a href="https://parametric-design.fh-potsdam.de/en/2d/05_1-variables/#arrays" data-func="Array-Bracket" data-root="true" target="_blank" rel="noopener noreferrer">[]</a>'
     );
     expect(output).toContain(
-      '<a href="https://parametric-design.fh-potsdam.de/en/2d/05_1-variables/#arrays" data-func="Array-Bracket" target="_blank" rel="noopener noreferrer">[i]</a>'
+      '<a href="https://parametric-design.fh-potsdam.de/en/2d/05_1-variables/#arrays" data-func="Array-Bracket" data-root="true" target="_blank" rel="noopener noreferrer">[i]</a>'
     );
     expect(output).toContain(
-      '<a href="https://parametric-design.fh-potsdam.de/en/2d/05_1-variables/#arrays" data-func="Array-Bracket" target="_blank" rel="noopener noreferrer">[<span class="hljs-number">1</span>]</a>'
+      '<a href="https://parametric-design.fh-potsdam.de/en/2d/05_1-variables/#arrays" data-func="Array-Bracket" data-root="true" target="_blank" rel="noopener noreferrer">[<span class="hljs-number">1</span>]</a>'
     );
   });
 });
