@@ -29,7 +29,9 @@ function isLocalTestOrigin(origin: string): boolean {
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
+  console.log(req.headers.origin);
   if (origin && (allowedOrigins.has(origin) || (allowLocalhostCors && isLocalTestOrigin(origin)))) {
+    console.log("CORS");
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Vary", "Origin");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
