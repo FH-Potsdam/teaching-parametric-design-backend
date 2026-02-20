@@ -13,9 +13,20 @@ const allowedOrigins = new Set([
   "http://parametric-design.fh-potsdam.de",
 ]);
 
+function isLocalTestOrigin(origin: string): boolean {
+  try {
+    const { protocol, hostname } = new URL(origin);
+    const isHttp = protocol === "http:" || protocol === "https:";
+    const isLocalHost = hostname === "localhost" || hostname === "127.0.0.1";
+    return isHttp && isLocalHost;
+  } catch {
+    return false;
+  }
+}
+
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  if (origin && allowedOrigins.has(origin)) {
+  if (origin && (allowedOrigins.has(origin) || isLocalTestOrigin(origin))) {
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Vary", "Origin");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
