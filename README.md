@@ -19,6 +19,7 @@ npm install
 - `npm test` — run the Vitest suite (uses JSDOM for HTML validation).
 - `npm run docs` — generate TypeDoc output in `docs/code/`.
 - `npm run docs:api` — build the Swagger UI bundle into `docs/api/`.
+- `npm run logs:decrypt` — decrypt encrypted logs from `logs/` into `logs-decrypted/`.
 
 ## API
 
@@ -87,7 +88,19 @@ See the OpenAPI 3.0 specification in `openapi.yaml`.
 
 ## Logging
 
-The `/api/generate` endpoint writes a JSON log entry to `logs/` that includes the user question, the generated response payload, and a timestamp. The log does not include any user-identifying information or client metadata.
+The `/api/generate` endpoint writes an AES-256-GCM encrypted log entry to `logs/` that includes the user question, the generated response payload, and a timestamp. The log does not include any user-identifying information or client metadata. Encrypted files are stored with the `.json.enc` extension and require `LOG_ENCRYPTION_KEY` to decrypt.
+
+Decrypt all encrypted logs with the default directories:
+
+```bash
+npm run logs:decrypt
+```
+
+Decrypt from a custom input and output directory:
+
+```bash
+node scripts/decryptLogs.js ./logs ./logs-decrypted
+```
 
 ## Swagger UI
 
@@ -112,6 +125,7 @@ npm run docs
 - `PORT` — API port (default: `3000`).
 - `OPENAI_API_KEY` — required API token for the OpenAI-compatible endpoint.
 - `OPENAI_MODEL` — model slug (default: `gpt-4o-mini`).
+- `LOG_ENCRYPTION_KEY` — required 256-bit encryption key for logs (`base64`-encoded 32-byte value or 64-char hex).
 
 ## Notes
 
