@@ -83,6 +83,36 @@ const p5SketchSchema = {
 
 export { p5SketchSchema };
 
+type OpenRouterMessage = { role: "system" | "user"; content: string };
+const CURRENT_CODE_CONTEXT_PREFIX =
+  "The question is about the attached current code. Use this code as context when responding.\n\nCurrent code:\n";
+
+export type { OpenRouterMessage };
+
+/**
+ * Build the OpenRouter message array including system context and optional current code.
+ * @param question - User prompt describing the sketch.
+ * @param currentCode - Existing code related to the user question.
+ * @returns Ordered messages sent to OpenRouter.
+ */
+function buildOpenRouterMessages(question: string, currentCode?: string): OpenRouterMessage[] {
+  const messages: OpenRouterMessage[] = [
+    { role: "system", content: BASE_CONTEXT },
+    { role: "user", content: question }
+  ];
+
+  if (typeof currentCode === "string" && currentCode.trim()) {
+    messages.push({
+      role: "user",
+      content: CURRENT_CODE_CONTEXT_PREFIX + currentCode
+    });
+  }
+
+  return messages;
+}
+
+export { buildOpenRouterMessages };
+
 /**
  * Request a p5.js sketch from OpenRouter and return the raw JavaScript code.
  * @param question - User prompt describing the sketch.
@@ -94,19 +124,7 @@ export async function requestOpenRouterCode(
   currentCode?: string,
 ): Promise<string> {
   const openRouter = await getOpenRouter();
-  const messages: Array<{ role: "system" | "user"; content: string }> = [
-    { role: "system", content: BASE_CONTEXT },
-    { role: "user", content: question }
-  ];
-
-  if (typeof currentCode === "string" && currentCode.trim()) {
-    messages.push({
-      role: "user",
-      content:
-        "The question is about the attached current code. Use this code as context when responding.\n\nCurrent code:\n" +
-        currentCode
-    });
-  }
+  const messages = buildOpenRouterMessages(question, currentCode);
 
   const response = await openRouter.chat.send({
     model: OPENROUTER_MODEL,

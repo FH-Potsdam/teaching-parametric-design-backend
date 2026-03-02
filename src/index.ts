@@ -5,7 +5,7 @@ import path from "path";
 import { enhanceCode } from "./enhanceCode";
 import { loadFunctionLinks, resolveLanguage } from "./functionLinks";
 import { logGenerateResponse } from "./logging";
-import { requestOpenRouterCode } from "./openRouter";
+import { buildOpenRouterMessages, requestOpenRouterCode } from "./openRouter";
 
 const app = express();
 const allowedOrigins = new Set([
@@ -74,13 +74,14 @@ async function handleGenerate(req: Request<Record<string, never>, unknown, Gener
   try {
     const currentCode =
       typeof inputCode === "string" ? inputCode.trim() : undefined;
+    const messages = buildOpenRouterMessages(question, currentCode);
     const code = await requestOpenRouterCode(question, currentCode);
     const functionLinks = loadFunctionLinks(language);
     const html = enhanceCode(code, functionLinks, language);
     const responsePayload = { html: html.code, raw: code, functionCalls: html.functions };
 
     try {
-      await logGenerateResponse(responsePayload, question);
+      await logGenerateResponse(responsePayload, messages);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error("Failed to write generate log", error);

@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 import type { FunctionArray } from "./regex";
+import type { OpenRouterMessage } from "./openRouter";
 
 type GenerateResponsePayload = {
   html: string;
@@ -10,19 +11,19 @@ type GenerateResponsePayload = {
 };
 
 type GenerateLogPayload = GenerateResponsePayload & {
-  question: string;
+  messages: OpenRouterMessage[];
   timestamp: string;
 };
 
 /**
  * Persist the generate endpoint response payload to a timestamped log file.
  * @param payload - JSON payload returned by /api/generate.
- * @param question - User question sent to /api/generate.
+ * @param messages - Full OpenRouter message array used for generation.
  * @returns Promise resolving after the log file is written.
  */
 export async function logGenerateResponse(
   payload: GenerateResponsePayload,
-  question: string
+  messages: OpenRouterMessage[]
 ): Promise<void> {
   const timestamp = new Date().toISOString();
   const logsDir = path.join(process.cwd(), "logs");
@@ -31,7 +32,7 @@ export async function logGenerateResponse(
   const safeTimestamp = timestamp.replace(/[:.]/g, "-");
   const randomSuffix = Math.random().toString(36).slice(2, 8);
   const filePath = path.join(logsDir, `${safeTimestamp}-${randomSuffix}.json`);
-  const logPayload: GenerateLogPayload = { ...payload, question, timestamp };
+  const logPayload: GenerateLogPayload = { ...payload, messages, timestamp };
 
   await fs.writeFile(filePath, JSON.stringify(logPayload, null, 2), "utf8");
 }
