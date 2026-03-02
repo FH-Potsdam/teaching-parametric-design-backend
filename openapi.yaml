@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Teaching Parametric Design Backend API
   version: 0.1.0
-  description: API for forwarding code generation requests to OpenRouter and returning HTML-highlighted JavaScript snippets.
+  description: API for forwarding code generation requests to an OpenAI-compatible endpoint and returning HTML-highlighted JavaScript snippets.
 servers:
   - url: http://localhost:3000
 paths:
@@ -51,7 +51,7 @@ paths:
   /api/linkify:
     post:
       summary: Linkify provided JavaScript and return metadata
-      description: Returns highlighted HTML, raw source, and extracted function link metadata without calling OpenRouter.
+      description: Returns highlighted HTML, raw source, and extracted function link metadata without calling model generation.
       requestBody:
         required: true
         content:

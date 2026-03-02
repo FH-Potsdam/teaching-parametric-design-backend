@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 import type { FunctionArray } from "./regex";
-import type { OpenRouterMessage } from "./openRouter";
+import type { RequestCodeMessage } from "./requestCode";
 
 type GenerateResponsePayload = {
   html: string;
@@ -11,19 +11,19 @@ type GenerateResponsePayload = {
 };
 
 type GenerateLogPayload = GenerateResponsePayload & {
-  messages: OpenRouterMessage[];
+  messages: RequestCodeMessage[];
   timestamp: string;
 };
 
 /**
  * Persist the generate endpoint response payload to a timestamped log file.
  * @param payload - JSON payload returned by /api/generate.
- * @param messages - Full OpenRouter message array used for generation.
+ * @param messages - Full message array used for generation.
  * @returns Promise resolving after the log file is written.
  */
 export async function logGenerateResponse(
   payload: GenerateResponsePayload,
-  messages: OpenRouterMessage[]
+  messages: RequestCodeMessage[]
 ): Promise<void> {
   const timestamp = new Date().toISOString();
   const logsDir = path.join(process.cwd(), "logs");

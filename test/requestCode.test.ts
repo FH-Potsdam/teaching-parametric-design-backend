@@ -1,35 +1,35 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const sendMock = vi.fn();
+const createMock = vi.fn();
 
-vi.mock("@openrouter/sdk", () => {
-  class OpenRouter {
-    chat = { send: sendMock };
+vi.mock("openai", () => {
+  class OpenAI {
+    chat = { completions: { create: createMock } };
   }
 
-  return { OpenRouter, __sendMock: sendMock };
+  return { default: OpenAI };
 });
 
-describe("requestOpenRouterCode", () => {
+describe("requestCode", () => {
   beforeEach(() => {
-    sendMock.mockReset();
-    process.env.OPENROUTER_API_KEY = "test-key";
+    createMock.mockReset();
+    process.env.OPENAI_API_KEY = "test-key";
     vi.resetModules();
   });
 
   it("returns the parsed code from a JSON response", async () => {
-    sendMock.mockResolvedValue({
+    createMock.mockResolvedValue({
       choices: [{ message: { content: '{"code":"console.log(1);"}' } }]
     });
 
-    const { requestOpenRouterCode } = await import("../src/openRouter");
-    const code = await requestOpenRouterCode("hi");
+    const { requestCode } = await import("../src/requestCode");
+    const code = await requestCode("hi");
 
     expect(code).toBe("console.log(1);");
   });
 
   it("accepts array-based text content", async () => {
-    sendMock.mockResolvedValue({
+    createMock.mockResolvedValue({
       choices: [
         {
           message: {
@@ -39,22 +39,22 @@ describe("requestOpenRouterCode", () => {
       ]
     });
 
-    const { requestOpenRouterCode } = await import("../src/openRouter");
-    const code = await requestOpenRouterCode("hi");
+    const { requestCode } = await import("../src/requestCode");
+    const code = await requestCode("hi");
 
     expect(code).toBe("const x = 1;");
   });
 
   it("adds current code context when code is provided", async () => {
-    sendMock.mockResolvedValue({
+    createMock.mockResolvedValue({
       choices: [{ message: { content: '{"code":"console.log(2);"}' } }]
     });
 
-    const { requestOpenRouterCode } = await import("../src/openRouter");
-    await requestOpenRouterCode("change this", "function draw() { background(0); }");
+    const { requestCode } = await import("../src/requestCode");
+    await requestCode("change this", "function draw() { background(0); }");
 
-    expect(sendMock).toHaveBeenCalledTimes(1);
-    const requestPayload = sendMock.mock.calls[0]?.[0];
+    expect(createMock).toHaveBeenCalledTimes(1);
+    const requestPayload = createMock.mock.calls[0]?.[0];
     expect(requestPayload.messages).toHaveLength(3);
     expect(requestPayload.messages[2]).toMatchObject({
       role: "user"

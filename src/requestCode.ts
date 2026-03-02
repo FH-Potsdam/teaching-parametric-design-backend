@@ -1,20 +1,15 @@
-import type { OpenRouter as OpenRouterClient } from "@openrouter/sdk";
+import OpenAI from "openai";
 
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "openai/gpt-4o-mini";
-const OPENROUTER_APP_TITLE =
-  process.env.OPENROUTER_APP_TITLE || "Teaching Parametric Design Backend";
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY || process.env.OPENROUTER_API_KEY;
+const OPENAI_MODEL = process.env.OPENAI_MODEL || process.env.OPENROUTER_MODEL || "gpt-4o-mini";
+const OPENAI_BASE_URL = "https://api.deutschlandgpt.de/v1";
 
-if (!OPENROUTER_API_KEY) {
+if (!OPENAI_API_KEY) {
   // eslint-disable-next-line no-console
-  console.warn("OPENROUTER_API_KEY is not set. Requests to OpenRouter will fail.");
+  console.warn("OPENAI_API_KEY is not set. Requests to the OpenAI-compatible API will fail.");
 }
 
-let openRouterPromise: Promise<OpenRouterClient> | null = null;
-const dynamicImport = new Function(
-  "specifier",
-  "return import(specifier)"
-) as (specifier: string) => Promise<{ OpenRouter: new (options: unknown) => OpenRouterClient }>;
+let openAIClient: OpenAI | null = null;
 
 const BASE_CONTEXT = `You are a JavaScript code generator.
 
@@ -83,20 +78,20 @@ const p5SketchSchema = {
 
 export { p5SketchSchema };
 
-type OpenRouterMessage = { role: "system" | "user"; content: string };
+type RequestCodeMessage = { role: "system" | "user"; content: string };
 const CURRENT_CODE_CONTEXT_PREFIX =
   "The question is about the attached current code. Use this code as context when responding.\n\nCurrent code:\n";
 
-export type { OpenRouterMessage };
+export type { RequestCodeMessage };
 
 /**
- * Build the OpenRouter message array including system context and optional current code.
+ * Build the message array including system context and optional current code.
  * @param question - User prompt describing the sketch.
  * @param currentCode - Existing code related to the user question.
- * @returns Ordered messages sent to OpenRouter.
+ * @returns Ordered messages sent to the model endpoint.
  */
-function buildOpenRouterMessages(question: string, currentCode?: string): OpenRouterMessage[] {
-  const messages: OpenRouterMessage[] = [
+function buildRequestMessages(question: string, currentCode?: string): RequestCodeMessage[] {
+  const messages: RequestCodeMessage[] = [
     { role: "system", content: BASE_CONTEXT },
     { role: "user", content: question }
   ];
@@ -111,76 +106,64 @@ function buildOpenRouterMessages(question: string, currentCode?: string): OpenRo
   return messages;
 }
 
-export { buildOpenRouterMessages };
+export { buildRequestMessages };
 
 /**
- * Request a p5.js sketch from OpenRouter and return the raw JavaScript code.
+ * Request a p5.js sketch and return the raw JavaScript code.
  * @param question - User prompt describing the sketch.
  * @param currentCode - Existing code related to the user question.
  * @returns Raw JavaScript code from the model response.
  */
-export async function requestOpenRouterCode(
+export async function requestCode(
   question: string,
   currentCode?: string,
 ): Promise<string> {
-  const openRouter = await getOpenRouter();
-  const messages = buildOpenRouterMessages(question, currentCode);
+  const openAI = getOpenAIClient();
+  const messages = buildRequestMessages(question, currentCode);
 
-  const response = await openRouter.chat.send({
-    model: OPENROUTER_MODEL,
+  const response = await openAI.chat.completions.create({
+    model: OPENAI_MODEL,
     temperature: 0,
     messages,
-    responseFormat: {
+    response_format: {
       type: "json_schema",
-      jsonSchema: p5SketchSchema
+      json_schema: p5SketchSchema
     }
   });
 
   const content = extractTextContent(response.choices?.[0]?.message?.content);
   if (!content) {
-    throw new Error("No content returned from OpenRouter");
+    throw new Error("No content returned from the model endpoint");
   }
 
   const parsed = extractCodeFromJson(content);
   if (!parsed) {
-    throw new Error("No code returned from OpenRouter");
+    throw new Error("No code returned from the model endpoint");
   }
 
   return parsed.trim();
 }
 
 /**
- * Lazily create a cached OpenRouter client with environment configuration.
- * @returns Cached OpenRouter client instance.
+ * Lazily create and cache an OpenAI client configured for DeutschlandGPT.
+ * @returns Cached OpenAI client instance.
  */
-async function getOpenRouter(): Promise<OpenRouterClient> {
-  if (!openRouterPromise) {
-    // conflict between vitest and typescript export
-    if (process.env.NODE_ENV === "test") {
-      openRouterPromise = import("@openrouter/sdk").then(({ OpenRouter }) => {
-        return new OpenRouter({
-          apiKey: OPENROUTER_API_KEY,
-          xTitle: OPENROUTER_APP_TITLE
-        });
-      });
-    } else {
-      openRouterPromise = dynamicImport("@openrouter/sdk").then(({ OpenRouter }) => {
-        return new OpenRouter({
-          apiKey: OPENROUTER_API_KEY,
-          xTitle: OPENROUTER_APP_TITLE
-        });
-      });
-    }
+function getOpenAIClient(): OpenAI {
+  if (!openAIClient) {
+    openAIClient = new OpenAI({
+      apiKey: OPENAI_API_KEY,
+      baseURL: OPENAI_BASE_URL
+    });
   }
 
-  return openRouterPromise;
+  return openAIClient;
 }
 
-export { getOpenRouter };
+export { getOpenAIClient };
 
 /**
  * Pull the "code" field from a JSON response string.
- * @param content - JSON string from OpenRouter.
+ * @param content - JSON string from model response content.
  * @returns Extracted code or null when missing/invalid.
  */
 function extractCodeFromJson(content: string): string | null {
@@ -195,7 +178,7 @@ function extractCodeFromJson(content: string): string | null {
 export { extractCodeFromJson };
 
 /**
- * Normalize OpenRouter message content into a single text string.
+ * Normalize message content into a single text string.
  * @param content - Response content in string or typed parts.
  * @returns Concatenated text or null when unavailable.
  */

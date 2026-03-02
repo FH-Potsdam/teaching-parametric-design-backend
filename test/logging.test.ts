@@ -4,7 +4,7 @@ import path from "path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { logGenerateResponse } from "../src/logging";
-import { BASE_CONTEXT } from "../src/openRouter";
+import { BASE_CONTEXT } from "../src/requestCode";
 
 describe("logGenerateResponse", () => {
   const cwdSpy = vi.spyOn(process, "cwd");

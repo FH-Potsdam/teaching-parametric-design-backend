@@ -1,10 +1,10 @@
 # Teaching Parametric Design Backend
 
-An Express + TypeScript API that forwards code-generation prompts to the OpenRouter API, enforces a JavaScript-only context, and returns HTML-highlighted snippets with quick reference links.
+An Express + TypeScript API that forwards code-generation prompts to an OpenAI-compatible API, enforces a JavaScript-only context, and returns HTML-highlighted snippets with quick reference links.
 
 ## Setup
 
-1. Copy `.env.example` to `.env` and provide your OpenRouter credentials.
+1. Copy `.env.example` to `.env` and provide your API credentials.
 2. Install dependencies (requires Node.js 18+ for the built-in `fetch` API):
 
 ```bash
@@ -36,7 +36,7 @@ Request body:
 Behavior:
 - Supports `language: "en" | "de"` (defaults to English) for localized links.
 - Wraps the question with a system prompt that demands **only JavaScript code** (no Markdown).
-- Sends the request to OpenRouter using the configured model.
+- Sends the request to `https://api.deutschlandgpt.de/v1` using the configured model.
 - Highlights the returned JavaScript with `highlight.js` and converts selected function names into links.
 
 Response body:
@@ -72,7 +72,7 @@ Request body:
 ```
 
 Behavior:
-- Skips OpenRouter and linkifies the provided code directly.
+- Skips model generation and linkifies the provided code directly.
 - Returns highlighted HTML plus the extracted function link metadata.
 
 Response body: same shape as `/api/generate`.
@@ -110,12 +110,10 @@ npm run docs
 ## Environment Variables
 
 - `PORT` — API port (default: `3000`).
-- `OPENROUTER_API_KEY` — required OpenRouter token.
-- `OPENROUTER_MODEL` — model slug (default: `openai/gpt-4o-mini`).
-- `OPENROUTER_SITE_URL` — value forwarded to OpenRouter `HTTP-Referer` header.
-- `OPENROUTER_APP_TITLE` — value forwarded to OpenRouter `X-Title` header.
+- `OPENAI_API_KEY` — required API token for the OpenAI-compatible endpoint.
+- `OPENAI_MODEL` — model slug (default: `gpt-4o-mini`).
 
 ## Notes
 
-- The service expects the OpenRouter API key to be present at runtime. Without it, requests will fail.
+- The service expects `OPENAI_API_KEY` to be present at runtime. Without it, requests will fail.
 - Function references are linked against MDN, p5.js, and Parametric Design references (localized when available).

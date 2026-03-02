@@ -5,7 +5,7 @@ import path from "path";
 import { enhanceCode } from "./enhanceCode";
 import { loadFunctionLinks, resolveLanguage } from "./functionLinks";
 import { logGenerateResponse } from "./logging";
-import { buildOpenRouterMessages, requestOpenRouterCode } from "./openRouter";
+import { buildRequestMessages, requestCode } from "./requestCode";
 
 const app = express();
 const allowedOrigins = new Set([
@@ -57,7 +57,7 @@ type GenerateRequestBody = {
 /**
  * Handle code-generation requests and return highlighted HTML plus link data.
  * Accepts a required `question`, optional existing `code` context, and optional `language`.
- * When `code` is provided, it is forwarded as context to OpenRouter.
+ * When `code` is provided, it is forwarded as context to the model endpoint.
  * @param req - Express request with generate payload in body.
  * @param res - Express response used to send JSON.
  * @returns Promise resolving to an Express response.
@@ -74,8 +74,8 @@ async function handleGenerate(req: Request<Record<string, never>, unknown, Gener
   try {
     const currentCode =
       typeof inputCode === "string" ? inputCode.trim() : undefined;
-    const messages = buildOpenRouterMessages(question, currentCode);
-    const code = await requestOpenRouterCode(question, currentCode);
+    const messages = buildRequestMessages(question, currentCode);
+    const code = await requestCode(question, currentCode);
     const functionLinks = loadFunctionLinks(language);
     const html = enhanceCode(code, functionLinks, language);
     const responsePayload = { html: html.code, raw: code, functionCalls: html.functions };
