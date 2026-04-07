@@ -126,6 +126,7 @@ npm run docs
 - `OPENAI_API_KEY` — required API token for the OpenAI-compatible endpoint.
 - `OPENAI_MODEL` — model slug (default: `gpt-4o-mini`).
 - `LOG_ENCRYPTION_KEY` — required 256-bit encryption key for logs (`base64`-encoded 32-byte value or 64-char hex).
+- `OPENAI_BASE_URL` — URL to cloud endpoint for llm interface (does not need to be OpenAI, e.g. Open Router, etc.)
 
 ## Notes
 
